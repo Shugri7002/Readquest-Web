@@ -1,0 +1,48 @@
+@page
+@model Readquest.Web.Pages.Auth.GenresModel
+@{
+    ViewData["Title"] = "Genre Selection – Readquest";
+}
+
+<section class="genre-hero">
+  <div class="genre-inner container">
+    <h1 class="display-hero center">Select Your Favorite Genres</h1>
+    <p class="lead center">Pick a few worlds you’d love to explore.</p>
+
+    <form method="post" id="genreForm" class="genre-grid">
+      @foreach (var g in Model.AllGenres)
+      {
+        <label class="genre-tile">
+          <input type="checkbox" name="Selected" value="@g" hidden />
+          <span class="tile-face">@g</span>
+        </label>
+      }
+    </form>
+
+    <button form="genreForm" type="submit" class="btn-gold btn-wide" id="continueBtn" disabled>
+      Continue
+    </button>
+  </div>
+</section>
+
+@section Scripts {
+<script>
+// toggle UI + button enable
+const tiles = document.querySelectorAll('.genre-tile');
+const btn = document.getElementById('continueBtn');
+const form = document.getElementById('genreForm');
+
+tiles.forEach(t => {
+  t.addEventListener('click', (e) => {
+    const cb = t.querySelector('input[type="checkbox"]');
+    cb.checked = !cb.checked;              // toggle
+    t.classList.toggle('is-selected', cb.checked);
+    e.preventDefault();                    // don't submit
+    btn.disabled = form.querySelectorAll('input[type="checkbox"]:checked').length === 0;
+  });
+});
+
+// also enable if browser restores state
+btn.disabled = form.querySelectorAll('input[type="checkbox"]:checked').length === 0;
+</script>
+}

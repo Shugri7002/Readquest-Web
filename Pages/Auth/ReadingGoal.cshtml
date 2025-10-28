@@ -1,0 +1,46 @@
+@page
+@model Readquest.Web.Pages.Auth.ReadingGoalModel
+@{
+    ViewData["Title"] = "Reading Goal – Readquest";
+}
+
+<section class="goal-hero">
+  <div class="goal-inner">
+    <h1 class="goal-title">Your quest begins with a goal</h1>
+    <p class="goal-sub">How many books will you conquer this year?</p>
+
+    <div class="goal-options">
+      <button class="goal-box">
+        <strong>Casual Reader</strong>
+        <span>5 Books / Year</span>
+      </button>
+
+      <button class="goal-box">
+        <strong>Adventurer</strong>
+        <span>15 Books / Year</span>
+      </button>
+
+      <button class="goal-box">
+        <strong>Book Champion</strong>
+        <span>25+ Books / Year</span>
+      </button>
+    </div>
+
+    <button class="btn-gold goal-continue" disabled>Continue</button>
+  </div>
+</section>
+
+@section Scripts {
+<script>
+  const boxes = document.querySelectorAll('.goal-box');
+  const btn = document.querySelector('.goal-continue');
+
+  boxes.forEach(b => {
+    b.addEventListener('click', () => {
+      boxes.forEach(x => x.classList.remove('selected'));
+      b.classList.add('selected');
+      btn.disabled = false;
+    });
+  });
+</script>
+}

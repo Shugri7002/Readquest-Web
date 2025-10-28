@@ -1,0 +1,44 @@
+﻿@{
+    var title = ViewData["Title"] as string ?? "Readquest";
+}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>@title</title>
+
+  <!-- Playfair Display -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="~/css/readquest.css" />
+</head>
+<body>
+<header class="site-nav">
+  <a class="brand-link" href="/">Readquest</a>
+
+  <nav class="nav-links">
+    <a href="/Home">Home</a>
+    <a href="/Discover">Discover</a>
+    <a href="/Quests">Quests</a>
+    <a href="/Profile">Profile</a>
+  </nav>
+</header>
+
+  <main role="main">
+    @RenderBody()
+  </main>
+
+  <footer>
+    <div class="container" style="img/hero.jpg/color:var(--muted);text-align:center">
+      © @DateTime.Now.Year Readquest — Designed for book adventurers.
+      <span style="opacity:.6"> • </span>
+      <a href="/Privacy">Privacy Policy</a>
+      <span style="opacity:.6"> • </span>
+      <a href="/Terms">Terms of Use</a>
+    </div>
+  </footer>
+
+  @RenderSection("Scripts", required: false)
+</body>
+</html>

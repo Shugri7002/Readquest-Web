@@ -1,0 +1,47 @@
+@page
+@model Readquest.Web.Pages.Auth.LoginModel
+@{
+    ViewData["Title"] = "Login – Readquest";
+}
+
+<section class="auth-hero">
+  <div class="auth-overlay"></div>
+
+  <div class="auth-grid container">
+    <!-- Left: headline -->
+    <div class="auth-left">
+
+      <h1 class="auth-title">
+        Your next adventure<br />
+        begins here.
+      </h1>
+      <p class="auth-sub">Log in to continue your journey.</p>
+    </div>
+
+    <!-- Right: glass card -->
+    <div class="auth-right">
+      <div class="card-glass">
+        <form method="post" class="form">
+          <label>Email</label>
+          <input type="email" name="Email" required placeholder="Enter your email" />
+
+          <label>Password</label>
+          <input type="password" name="Password" required placeholder="••••••••" />
+
+          <button type="submit" class="btn btn-gold btn-lg">Continue</button>
+
+          <p class="meta">
+            Don’t have an account?
+            <a class="link-gold" href="/Auth/Register">Create one.</a>
+          </p>
+
+          @* tiny feedback while we don’t have real auth *@
+          @if (!string.IsNullOrWhiteSpace(Model.Message))
+          {
+            <div class="flash">@Model.Message</div>
+          }
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

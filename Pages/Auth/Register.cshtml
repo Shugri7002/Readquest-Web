@@ -1,0 +1,54 @@
+@page
+@model Readquest.Web.Pages.Auth.RegisterModel
+@{
+    ViewData["Title"] = "Register – Readquest";
+}
+
+<section class="auth-hero">
+  <div class="auth-hero__inner">
+    <!-- Left side: heading -->
+    <div class="auth-hero__text">
+      <h1 class="display-hero">Join the adventure</h1>
+      <p class="lead">Create your Readquest account to begin your journey.</p>
+    </div>
+
+    <!-- Right side: the glass card -->
+    <div class="auth-card">
+      <form method="post">
+        <div class="form-row">
+          <label for="FullName">Full Name</label>
+          <input asp-for="Input.FullName" id="FullName" placeholder="Enter your name" />
+          <span class="val" asp-validation-for="Input.FullName"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="Email">Email</label>
+          <input asp-for="Input.Email" id="Email" placeholder="Enter your email" />
+          <span class="val" asp-validation-for="Input.Email"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="Password">Password</label>
+          <input asp-for="Input.Password" id="Password" type="password" placeholder="Create a password" />
+          <span class="val" asp-validation-for="Input.Password"></span>
+        </div>
+
+        <div class="form-row">
+          <label for="ConfirmPassword">Confirm Password</label>
+          <input asp-for="Input.ConfirmPassword" id="ConfirmPassword" type="password" placeholder="Re-enter your password" />
+          <span class="val" asp-validation-for="Input.ConfirmPassword"></span>
+        </div>
+
+        <button class="btn-gold" type="submit">Create Account</button>
+
+        <p class="muted small" style="text-align:center;margin-top:16px;">
+          Already have an account? <a class="link" href="/Auth/Login">Log in.</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

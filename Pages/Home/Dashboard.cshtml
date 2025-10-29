@@ -1,0 +1,155 @@
+@page
+@model Readquest.Web.Pages.Home.Pages_Home_Dashboard
+@{
+    ViewData["Title"] = "Home/Dashboard – Readquest";
+}
+
+<section class="dash-hero">
+
+  <div class="dash-inner">
+    <h1 class="dash-title">Welcome back, adventurer</h1>
+    <p class="dash-sub">Continue your journey through the worlds of stories.</p>
+
+    <div class="dash-row">
+      <!-- Left: Discover the Realm -->
+      <aside class="glass card-compact">
+        <h3>Discover the Realm</h3>
+        <p class="muted">Explore your reading journeys<br/>across worlds</p>
+        <div class="icon-map" aria-hidden="true">🗺️</div>
+        <a class="btn-hero mt12" href="/Map">Enter Map</a>
+      </aside>
+
+      <!-- Center: Current read (feature) -->
+      <article class="glass feature">
+        <div class="feature-head">
+          <h2 class="feature-title">A Game of Thrones</h2>
+          <p class="muted byline">By George R.R. Martin</p>
+        </div>
+
+        <div class="feature-body">
+          <div class="progress">
+            <div class="bar" style="width:50%"></div>
+          </div>
+          <div class="progress-meta">
+            <span>360/720</span>
+            <span>50%</span>
+          </div>
+
+          <a class="btn-hero feature-cta" href="/Reader?book=game-of-thrones">Continue reading</a>
+
+          <img class="cover-lg"
+               src="/img/a-game-of-thrones.jpg"
+               alt="A Game of Thrones book"/>
+        </div>
+      </article>
+
+      <!-- Right: Today's Challenge -->
+      <aside class="glass card-compact">
+        <h3>Today’s Challenge</h3>
+        <p class="muted center">Read for 30 minutes • <strong>50 XP</strong></p>
+        <div class="icon-clock" aria-hidden="true">🕒</div>
+        <a class="btn-hero mt12" href="/Quests/Daily">Start Challenge</a>
+      </aside>
+    </div>
+
+    <!-- Recommended shelf -->
+    <section class="shelf">
+      <h3 class="shelf-title">Recommended</h3>
+
+      <ul class="book-shelf">
+        <!-- 1 -->
+        <li class="book">
+          <a href="/Book/six-of-crows" class="book-card">
+            <img src="/img/six-of-crows.jpg" alt="Six of Crows" class="cover"/>
+            <div class="book-meta">
+              <span class="book-title">Six of Crows</span>
+              <span class="book-score">97%</span>
+            </div>
+          </a>
+        </li>
+        <!-- 2 -->
+        <li class="book">
+          <a href="/Book/hunger-games" class="book-card">
+            <img src="/img/hunger-games.jpg" alt="The Hunger Games" class="cover"/>
+            <div class="book-meta">
+              <span class="book-title">The Hunger Games</span>
+              <span class="book-score">95%</span>
+            </div>
+          </a>
+        </li>
+        <!-- 3 -->
+        <li class="book">
+          <a href="/Book/anna-dressed-in-blood" class="book-card">
+            <img src="/img/anna-dressed-in-blood.jpg" alt="Anna Dressed in Blood" class="cover"/>
+            <div class="book-meta">
+              <span class="book-title">Anna Dressed in Blood</span>
+              <span class="book-score">92%</span>
+            </div>
+          </a>
+        </li>
+        <!-- 4 -->
+        <li class="book">
+          <a href="/Book/good-girls-guide" class="book-card">
+            <img src="/img/good-girls-guide.jpg" alt="A Good Girl’s Guide to Murder" class="cover"/>
+            <div class="book-meta">
+              <span class="book-title">Good Girl’s Guide</span>
+              <span class="book-score">93%</span>
+            </div>
+          </a>
+        </li>
+        <!-- 5 -->
+        <li class="book">
+          <a href="/Book/they-both-die-at-the-end" class="book-card">
+            <img src="/img/they-both-die-at-the-end.jpg" alt="They Both Die at the End" class="cover"/>
+            <div class="book-meta">
+              <span class="book-title">They Both Die at the End</span>
+              <span class="book-score">90%</span>
+            </div>
+          </a>
+        </li>
+        <!-- 6 -->
+        <li class="book">
+          <a href="/Book/legend" class="book-card">
+            <img src="/img/legend.jpg" alt="Legend" class="cover"/>
+            <div class="book-meta">
+              <span class="book-title">Legend</span>
+              <span class="book-score">91%</span>
+            </div>
+          </a>
+        </li>
+        <!-- 7 -->
+        <li class="book">
+          <a href="/Book/scythe" class="book-card">
+            <img src="/img/scythe.jpg" alt="Scythe" class="cover"/>
+            <div class="book-meta">
+              <span class="book-title">Scythe</span>
+              <span class="book-score">94%</span>
+            </div>
+          </a>
+        </li>
+        <!-- 8 -->
+        <li class="book">
+          <a href="/Book/throne-of-glass" class="book-card">
+            <img src="/img/throne-of-glass.jpg" alt="Throne of Glass" class="cover"/>
+            <div class="book-meta">
+              <span class="book-title">Throne of Glass</span>
+              <span class="book-score">90%</span>
+            </div>
+          </a>
+        </li>
+        <!-- 9 -->
+        <li class="book">
+          <a href="/Book/a-game-of-thrones" class="book-card">
+            <img src="/img/a-game-of-thrones.jpg" alt="A Game of Thrones" class="cover"/>
+            <div class="book-meta">
+              <span class="book-title">Game of Thrones</span>
+              <span class="book-score">89%</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</section>
+
+

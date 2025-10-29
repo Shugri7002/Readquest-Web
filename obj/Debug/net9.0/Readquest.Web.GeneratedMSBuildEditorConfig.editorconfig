@@ -44,8 +44,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Readquest.Web/Pages/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Readquest.Web/Pages/Home/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG9tZVxEYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Readquest.Web/Pages/Index.cshtml]

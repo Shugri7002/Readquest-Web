@@ -1,0 +1,46 @@
+@page "/Discover"
+@model Readquest.Web.Pages.Discover.Pages_Discover_Index
+@{
+    ViewData["Title"] = "Discover — Readquest";
+}
+
+<section class="discover-hero">
+  <div class="discover-frame">
+    <h1 class="discover-title">The Realms of Readquest</h1>
+    <p class="discover-sub">Where stories shape worlds</p>
+
+    <div class="realm-grid">
+      <!-- Top row -->
+      <a href="/discover/mystery" class="realm">
+        <img class="island-img" src="/img/vector 1.png" alt="Isles of Mystery">
+        <span class="realm-name">Isles<br>of<br>Mystery</span>
+      </a>
+
+      <a href="/discover/fantasy" class="realm">
+        <img class="island-img" src="/img/vector 2.png" alt="Realm of Fantasy">
+        <span class="realm-name">Realm<br>of<br>Fantasy</span>
+      </a>
+
+      <a href="/discover/scifi" class="realm">
+        <img class="island-img" src="/img/vector 3.png" alt="Dominion of Sci-fi">
+        <span class="realm-name">Dominion<br>of<br>Sci-fi</span>
+      </a>
+
+      <!-- Bottom row -->
+      <a href="/discover/romance" class="realm">
+        <img class="island-img" src="/img/vector 4.png" alt="Fields of Romance">
+        <span class="realm-name">Fields<br>of<br>Romance</span>
+      </a>
+
+      <a href="/discover/adventure" class="realm">
+        <img class="island-img" src="/img/vector 5.png" alt="Frontier of Adventure">
+        <span class="realm-name">Frontier<br>of<br>Adventure</span>
+      </a>
+
+      <a href="/discover/horror" class="realm">
+        <img class="island-img" src="/img/vector 6.png" alt="Shadows of Horror">
+        <span class="realm-name">Shadows<br>of<br>Horror</span>
+      </a>
+    </div>
+
+</section>

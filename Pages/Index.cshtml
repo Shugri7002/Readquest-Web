@@ -1,19 +1,29 @@
 ﻿@page
-@model Readquest.Web.Pages.Pages_Index
+@model IndexModel
 @{
-    ViewData["Title"] = "Home – Readquest";
-    Layout = "/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Discover your next great adventure in books.";
 }
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Discover your next<br>great adventure in books.</h1>
-        <p>Embark on quests, earn XP, and explore worlds through reading.</p>
-        <a href="/Discover" class="btn btn-gold">Start Readquest</a>
+<section class="landing-hero">
+
+
+  <div class="landing-inner">
+    <div class="landing-left">
+      <h1 class="landing-title">
+        Discover your next great adventure in books.
+      </h1>
+
+      <p class="landing-sub">
+        Embark on quests, earn XP, and explore worlds through reading.
+      </p>
+
+      <a class="btn-hero" href="/Auth/Login">Start Readquest</a>
     </div>
 
-    <div class="quote-box">
-        <blockquote>“A reading journey like no other.”</blockquote>
-        <cite>— The Book Review</cite>
-    </div>
+    <aside class="landing-quote">
+      <p>“A reading journey like no other.”</p>
+      <small>~ The Book Review</small>
+    </aside>
+  </div>
 </section>
+

@@ -7,14 +7,21 @@ public class LoginModel : PageModel
 {
     [BindProperty] public string? Email { get; set; }
     [BindProperty] public string? Password { get; set; }
-    public string? Message { get; private set; }
+
+    public string? Message { get; set; }
 
     public void OnGet() { }
 
-    public void OnPost()
+    public IActionResult OnPost()
     {
-        Message = (Email == "test@readquest.com" && Password == "1234")
-            ? "Login successful!"
-            : "Invalid credentials. Try again.";
+        // Dummy auth for now (accept anything non-empty)
+        if (!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password))
+        {
+            // TODO: real auth
+            return RedirectToPage("/Index");
+        }
+
+        Message = "Please enter your email and password.";
+        return Page();
     }
 }

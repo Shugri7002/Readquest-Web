@@ -1,48 +1,126 @@
-﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
+﻿:root {
+  --bg: #0b0f13;
+  --card: rgba(21, 26, 31, 0.75);
+  --text: #e7decf;
+  --muted: #b9b3a3;
+  --gold: #d6c089;
+  --edge: rgba(214, 192, 137, 0.25);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Playfair Display', serif;
+  overflow-x: hidden;
+}
+.container { max-width: 1180px; margin: 0 auto; padding: 0 60px; }
+a { color: var(--gold); text-decoration: none; }
+a:hover { opacity: 0.9; }
+
+/* HEADER + NAV */
+header {
+  position: absolute; top: 24px; left: 0; right: 0;
+  padding: 0 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  z-index: 10;
+}
+.brand-link {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px; font-weight: 700; color: var(--gold);
+}
+.nav-links { display: flex; gap: 32px; }
+.nav-links a { color: var(--gold); font-size: 16px; font-weight: 500; }
+.nav-links a:hover { opacity: .8; }
+
+/* =============== AUTH (Login & Register shared) =============== */
+.auth-hero {
+  position: relative;
+  min-height: 100vh;
+  display: grid; place-items: center;
+  padding: 84px 48px 48px;
+  background:
+    linear-gradient(to bottom, rgba(10,11,13,.62), rgba(10,11,13,.92)),
+    url('/img/landing-bg.jpg') center/cover no-repeat fixed;
+  color: var(--muted);
 }
 
-a {
-  color: #0077cc;
+.auth-hero__inner {
+  width: min(1240px, 100%);
+  display: grid;
+  grid-template-columns: 1fr 560px;
+  gap: 56px;
+  align-items: center;
+}
+@media (max-width: 1100px) {
+  .auth-hero__inner { grid-template-columns: 1fr; gap: 28px; }
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.auth-hero__text { max-width: 720px; }
+.display-hero {
+  font-size: clamp(40px, 6.4vw, 64px);
+  line-height: 1.06; font-weight: 700;
+  color: #efe7d2; margin: 0 0 10px 0;
+}
+.lead { font-size: 18px; color: var(--muted); opacity:.95; }
+
+/* glass card */
+.auth-card {
+  padding: 28px 28px 22px;
+  border-radius: 18px;
+  background: radial-gradient(120% 120% at 30% 0%,
+              rgba(28,29,33,.72) 0%,
+              rgba(20,21,25,.60) 40%,
+              rgba(18,19,22,.48) 100%);
+  border: 1px solid rgba(227,196,122,.25);
+  box-shadow:
+     0 10px 40px rgba(0,0,0,.45),
+     inset 0 1px 0 rgba(255,255,255,.03),
+     0 0 0 1px rgba(227,196,122,.06);
+  backdrop-filter: blur(10px);
 }
 
-.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.auth-card form { display: grid; gap: 14px; }
+.form-row { display: grid; gap: 8px; }
+.form-row label { font-size: 13px; color: #ddd3b6; }
+
+.form-row input {
+  height: 48px; padding: 0 14px; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(15,16,19,.62);
+  color: #eae4d0; outline: none;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,.4);
+}
+.form-row input::placeholder { color: rgba(234,228,208,.45); }
+.form-row input:focus {
+  border-color: rgba(227,196,122,.55);
+  box-shadow: 0 0 0 3px rgba(227,196,122,.18), inset 0 1px 2px rgba(0,0,0,.4);
 }
 
-.border-top {
-  border-top: 1px solid #e5e5e5;
+/* button */
+.btn-gold {
+  width: 100%; height: 54px; border-radius: 12px;
+  background: var(--gold); color: #1b1c1f; font-weight: 700;
+  border: none; cursor: pointer;
+  transition: filter .2s ease, transform .02s ease;
 }
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
+.btn-gold:hover { filter: brightness(1.05); }
+.btn-gold:active { transform: translateY(1px); }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-}
+.small { font-size: 13px; }
+.muted { color: var(--muted); opacity:.9; }
+.link { color: var(--gold); text-decoration: none; }
+.link:hover { text-decoration: underline; }
 
-button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+/* Basic landing hero (optional for /) */
+.hero {
+  min-height: 100vh; display: grid; align-items: center; padding: 0 60px;
+  background:
+    linear-gradient(to bottom, rgba(10,11,13,.62), rgba(10,11,13,.92)),
+    url('/img/landing-bg.jpg') center/cover no-repeat fixed;
+  color: var(--muted);
 }
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
-}
+.hero-content { max-width: 720px; margin-top: 80px; }
+.hero h1 { font-size: 64px; line-height: 1.12; margin-bottom: 18px; }
+.hero p { font-size: 18px; color: var(--muted); margin-bottom: 24px; }
+.btn { background: var(--gold); color: #1a1610; padding: 12px 20px; font-weight: 700; border-radius: 10px; display: inline-block; }

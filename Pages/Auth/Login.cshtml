@@ -5,43 +5,33 @@
 }
 
 <section class="auth-hero">
-  <div class="auth-overlay"></div>
-
-  <div class="auth-grid container">
-    <!-- Left: headline -->
-    <div class="auth-left">
-
-      <h1 class="auth-title">
-        Your next adventure<br />
-        begins here.
-      </h1>
-      <p class="auth-sub">Log in to continue your journey.</p>
+  <div class="auth-hero__inner">
+    <div class="auth-hero__text">
+      <h1 class="display-hero">Your next adventure begins here.</h1>
+      <p class="lead">Log in to continue your journey.</p>
     </div>
 
-    <!-- Right: glass card -->
-    <div class="auth-right">
-      <div class="card-glass">
-        <form method="post" class="form">
+    <div class="auth-card">
+      @if (!string.IsNullOrWhiteSpace(Model.Message))
+      {
+        <div class="small" style="color:var(--gold);margin-bottom:8px">@Model.Message</div>
+      }
+      <form method="post">
+        <div class="form-row">
           <label>Email</label>
-          <input type="email" name="Email" required placeholder="Enter your email" />
-
+          <input type="email" name="Email" placeholder="Enter your email" required />
+        </div>
+        <div class="form-row">
           <label>Password</label>
-          <input type="password" name="Password" required placeholder="••••••••" />
+          <input type="password" name="Password" placeholder="••••••••" required />
+        </div>
 
-          <button type="submit" class="btn btn-gold btn-lg">Continue</button>
+        <button class="btn-gold" type="submit">Continue</button>
 
-          <p class="meta">
-            Don’t have an account?
-            <a class="link-gold" href="/Auth/Register">Create one.</a>
-          </p>
-
-          @* tiny feedback while we don’t have real auth *@
-          @if (!string.IsNullOrWhiteSpace(Model.Message))
-          {
-            <div class="flash">@Model.Message</div>
-          }
-        </form>
-      </div>
+        <p class="small muted" style="text-align:center;margin-top:10px">
+          Don’t have an account? <a class="link" href="/Auth/Register">Create one.</a>
+        </p>
+      </form>
     </div>
   </div>
 </section>

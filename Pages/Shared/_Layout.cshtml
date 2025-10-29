@@ -14,23 +14,23 @@
   <link rel="stylesheet" href="~/css/readquest.css" />
 </head>
 <body>
-<header class="site-nav">
-  <a class="brand-link" href="/">Readquest</a>
-
-  <nav class="nav-links">
-    <a href="/Home">Home</a>
-    <a href="/Discover">Discover</a>
-    <a href="/Quests">Quests</a>
-    <a href="/Profile">Profile</a>
-  </nav>
-</header>
+  <!-- SINGLE, GLOBAL HEADER -->
+  <header class="site-nav">
+    <a class="brand" href="/">Readquest</a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/Discover">Discover</a>
+      <a href="/Quests">Quests</a>
+      <a href="/Profile">Profile</a>
+    </nav>
+  </header>
 
   <main role="main">
     @RenderBody()
   </main>
 
   <footer>
-    <div class="container" style="img/hero.jpg/color:var(--muted);text-align:center">
+    <div class="container" style="padding:24px 18px;color:var(--muted);text-align:center">
       © @DateTime.Now.Year Readquest — Designed for book adventurers.
       <span style="opacity:.6"> • </span>
       <a href="/Privacy">Privacy Policy</a>

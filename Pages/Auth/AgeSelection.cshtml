@@ -1,6 +1,5 @@
 @page
 @model Readquest.Web.Pages.Auth.AgeSelectionModel
-
 @{
     ViewData["Title"] = "Age Selection – Readquest";
 }
@@ -8,17 +7,38 @@
 <section class="age-hero">
   <div class="overlay"></div>
 
+  <header class="site-nav">
+    <a class="brand" href="/">Readquest</a>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/Discover">Discover</a>
+      <a href="/Quests">Quests</a>
+    </nav>
+  </header>
+
   <div class="age-inner">
     <h1 class="age-title">What is your age, young reader.</h1>
     <p class="age-sub">Choose your age to tailor your reading adventure.</p>
 
-    <div class="age-options">
-      <button class="age-box">15</button>
-      <button class="age-box">16</button>
-      <button class="age-box">17</button>
-      <button class="age-box">18</button>
-    </div>
+    <form method="post" class="age-form">
+      <div class="age-options">
+        <!-- Hidden radios; labels are the big boxes. Clicking a box selects it. -->
+        <input id="age15" class="sr-only" type="radio" name="SelectedAge" value="15" />
+        <label for="age15" class="age-box">15</label>
 
-    <button class="btn btn-gold age-continue">Continue</button>
+        <input id="age16" class="sr-only" type="radio" name="SelectedAge" value="16" />
+        <label for="age16" class="age-box">16</label>
+
+        <input id="age17" class="sr-only" type="radio" name="SelectedAge" value="17" />
+        <label for="age17" class="age-box">17</label>
+
+        <input id="age18" class="sr-only" type="radio" name="SelectedAge" value="18" />
+        <label for="age18" class="age-box">18</label>
+      </div>
+
+      <span asp-validation-for="SelectedAge" class="flash"></span>
+
+      <button type="submit" class="btn btn-gold age-continue">Continue</button>
+    </form>
   </div>
 </section>

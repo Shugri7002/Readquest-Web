@@ -83,8 +83,6 @@ C:\Readquest.Web\obj\Debug\net9.0\compressed\we2y8opz16-2z0ns9nrw6.gz
 C:\Readquest.Web\obj\Debug\net9.0\compressed\i5i196h53y-muycvpuwrr.gz
 C:\Readquest.Web\obj\Debug\net9.0\compressed\sqe5ecw2j8-87fc7y1x7t.gz
 C:\Readquest.Web\obj\Debug\net9.0\compressed\xw8z8abfdf-mlv21k5csn.gz
-C:\Readquest.Web\obj\Debug\net9.0\compressed\sntlfqzd22-67rs4ha3y1.gz
-C:\Readquest.Web\obj\Debug\net9.0\compressed\ww7gtsypzx-67rs4ha3y1.gz
 C:\Readquest.Web\obj\Debug\net9.0\staticwebassets.build.json
 C:\Readquest.Web\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\Readquest.Web\obj\Debug\net9.0\staticwebassets.development.json
@@ -95,4 +93,7 @@ C:\Readquest.Web\obj\Debug\net9.0\Readquest.Web.pdb
 C:\Readquest.Web\obj\Debug\net9.0\Readquest.Web.genruntimeconfig.cache
 C:\Readquest.Web\obj\Debug\net9.0\ref\Readquest.Web.dll
 C:\Readquest.Web\obj\Debug\net9.0\compressed\1e3ie0z24v-hdfafpd3iw.gz
-C:\Readquest.Web\obj\Debug\net9.0\compressed\0gugq7kjf2-xbig3ciokr.gz
+C:\Readquest.Web\obj\Debug\net9.0\Readquest.Web.sourcelink.json
+C:\Readquest.Web\obj\Debug\net9.0\compressed\sntlfqzd22-kv2u1525di.gz
+C:\Readquest.Web\obj\Debug\net9.0\compressed\ww7gtsypzx-kv2u1525di.gz
+C:\Readquest.Web\obj\Debug\net9.0\compressed\0gugq7kjf2-aeeld2vnfy.gz

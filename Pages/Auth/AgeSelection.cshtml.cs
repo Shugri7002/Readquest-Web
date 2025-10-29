@@ -5,21 +5,22 @@ namespace Readquest.Web.Pages.Auth
 {
     public class AgeSelectionModel : PageModel
     {
+        // bound to the selected radio
         [BindProperty]
         public int? SelectedAge { get; set; }
 
-        public void OnGet()
-        {
-            // Nothing yet – just loads the page
-        }
+        public void OnGet() {}
 
-        public IActionResult OnPostSelectAge(int age)
+        public IActionResult OnPost()
         {
-            // Save the selected age temporarily in session (optional)
-            HttpContext.Session.SetInt32("UserAge", age);
+            if (SelectedAge is null)
+            {
+                ModelState.AddModelError(nameof(SelectedAge), "Please pick an age.");
+                return Page();
+            }
 
-            // Later this will go to Genre Selection
-            return RedirectToPage("/Auth/GenreSelection");
+            // Go to Genres and carry the chosen age (use TempData if you prefer)
+            return RedirectToPage("/Auth/Genres", new { age = SelectedAge.Value });
         }
     }
 }

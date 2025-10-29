@@ -1,4 +1,3 @@
-using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -6,38 +5,33 @@ namespace Readquest.Web.Pages.Auth;
 
 public class RegisterModel : PageModel
 {
-    [BindProperty]
-    public RegisterInput Input { get; set; } = new();
+    [BindProperty] public string? FullName { get; set; }
+    [BindProperty] public string? Email { get; set; }
+    [BindProperty] public string? Password { get; set; }
+    [BindProperty] public string? ConfirmPassword { get; set; }
 
-    public class RegisterInput
-    {
-        [Required, StringLength(80)]
-        public string FullName { get; set; } = "";
-
-        [Required, EmailAddress]
-        public string Email { get; set; } = "";
-
-        [Required, StringLength(100, MinimumLength = 6,
-            ErrorMessage = "Password must be at least 6 characters.")]
-        public string Password { get; set; } = "";
-
-        [Required, Compare(nameof(Password), ErrorMessage = "Passwords do not match.")]
-        public string ConfirmPassword { get; set; } = "";
-    }
+    public string? Message { get; set; }
 
     public void OnGet() { }
 
     public IActionResult OnPost()
     {
-        if (!ModelState.IsValid)
+        if (string.IsNullOrWhiteSpace(FullName) ||
+            string.IsNullOrWhiteSpace(Email) ||
+            string.IsNullOrWhiteSpace(Password) ||
+            string.IsNullOrWhiteSpace(ConfirmPassword))
+        {
+            Message = "Please fill in all fields.";
             return Page();
+        }
 
-        // TODO: later save to a database + hash password, etc.
+        if (!string.Equals(Password, ConfirmPassword, StringComparison.Ordinal))
+        {
+            Message = "Passwords do not match.";
+            return Page();
+        }
 
-        // Keep a friendly name for the next page (optional)
-        TempData["UserName"] = Input.FullName;
-
-        // Go to Age Selection (we’ll build this next)
-        return RedirectToPage("/Onboarding/Age");
+        // TODO: save user to DB (later)
+        return RedirectToPage("/Auth/Login");
     }
 }

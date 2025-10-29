@@ -5,54 +5,69 @@
 }
 
 <section class="dash-hero">
-
   <div class="dash-inner">
     <h1 class="dash-title">Welcome, adventurer</h1>
     <p class="dash-sub">Continue your journey through the worlds of stories.</p>
 
-    <div class="dash-row">
-      <!-- Left: Discover the Realm -->
-      <aside class="glass card-compact">
+    <div class="dash-grid">
+      <!-- LEFT: compact card -->
+      <aside class="dash-card card-compact">
         <h3>Discover the Realm</h3>
-        <p class="muted">Explore your reading journeys<br/>across worlds</p>
-        <div class="icon-map" aria-hidden="true">🗺️</div>
-        <a class="btn-hero mt12" href="/Map">Enter Map</a>
+        <p class="muted">Explore your reading journeys<br>across worlds</p>
+
+        <div class="icon-pill">
+          <!-- Map icon (gold) -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15 4l-6 2-6-2v15l6 2 6-2 6 2V6l-6-2zm-6 3l6-2v12l-6 2V7z"/>
+          </svg>
+        </div>
+
+        <button class="btn btn-gold btn-wide">Enter Map</button>
       </aside>
 
-      <!-- Center: Current read (feature) -->
-      <article class="glass feature">
-        <div class="feature-head">
-          <h2 class="feature-title">A Game of Thrones</h2>
-          <p class="muted byline">By George R.R. Martin</p>
-        </div>
-
+      <!-- CENTER: feature card -->
+      <main class="dash-card card-feature">
         <div class="feature-body">
-          <div class="progress">
-            <div class="bar" style="width:50%"></div>
-          </div>
-          <div class="progress-meta">
-            <span>360/720</span>
-            <span>50%</span>
+          <div class="feature-text">
+            <h2 class="feature-title">A Game of Thrones</h2>
+            <div class="byline">By George R.R. Martin</div>
+
+            <div class="progress-wrap">
+              <div class="progress">
+                <div class="bar" style="width:50%"></div>
+              </div>
+              <div class="progress-meta">
+                <span>360/720</span>
+                <span>50%</span>
+              </div>
+              <button class="btn btn-gold">Continue reading</button>
+            </div>
           </div>
 
-          <a class="btn-hero feature-cta" href="/Reader?book=game-of-thrones">Continue reading</a>
-
-          <img class="cover-lg"
-               src="/img/a-game-of-thrones.jpg"
-               alt="A Game of Thrones book"/>
+          <img class="cover-lg" src="/img/a-game-of-thrones.jpg" alt="A Game of Thrones">
         </div>
-      </article>
+      </main>
 
-      <!-- Right: Today's Challenge -->
-      <aside class="glass card-compact">
+      <!-- RIGHT: compact card -->
+      <aside class="dash-card card-compact">
         <h3>Today’s Challenge</h3>
-        <p class="muted center">Read for 30 minutes • <strong>50 XP</strong></p>
-        <div class="icon-clock" aria-hidden="true">🕒</div>
-        <a class="btn-hero mt12" href="/Quests/Daily">Start Challenge</a>
+        <p class="muted">Read for 30 minutes • 50&nbsp;XP</p>
+
+        <div class="icon-pill">
+          <!-- Clock icon (gold) -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm1 10.59l3.3 1.9-1 1.73L11 13V7h2z"/>
+          </svg>
+        </div>
+
+        <button class="btn btn-gold btn-wide">Start Challenge</button>
       </aside>
     </div>
+  </div>
+</section>
 
-    <!-- Recommended shelf -->
+
+    <!-- Recommended shelf (kept inside dash-inner, below the grid) -->
     <section class="shelf">
       <h3 class="shelf-title">Recommended</h3>
 
@@ -60,7 +75,7 @@
         <!-- 1 -->
         <li class="book">
           <a href="/Book/six-of-crows" class="book-card">
-            <img src="/img/six-of-crows.jpg" alt="Six of Crows" class="cover"/>
+            <img src="/img/six-of-crows.jpg" alt="Six of Crows" class="cover" />
             <div class="book-meta">
               <span class="book-title">Six of Crows</span>
               <span class="book-score">97%</span>
@@ -70,7 +85,7 @@
         <!-- 2 -->
         <li class="book">
           <a href="/Book/hunger-games" class="book-card">
-            <img src="/img/hunger-games.jpg" alt="The Hunger Games" class="cover"/>
+            <img src="/img/hunger-games.jpg" alt="The Hunger Games" class="cover" />
             <div class="book-meta">
               <span class="book-title">The Hunger Games</span>
               <span class="book-score">95%</span>
@@ -80,7 +95,7 @@
         <!-- 3 -->
         <li class="book">
           <a href="/Book/anna-dressed-in-blood" class="book-card">
-            <img src="/img/anna-dressed-in-blood.jpg" alt="Anna Dressed in Blood" class="cover"/>
+            <img src="/img/anna-dressed-in-blood.jpg" alt="Anna Dressed in Blood" class="cover" />
             <div class="book-meta">
               <span class="book-title">Anna Dressed in Blood</span>
               <span class="book-score">92%</span>
@@ -90,7 +105,7 @@
         <!-- 4 -->
         <li class="book">
           <a href="/Book/good-girls-guide" class="book-card">
-            <img src="/img/good-girls-guide.jpg" alt="A Good Girl’s Guide to Murder" class="cover"/>
+            <img src="/img/good-girls-guide.jpg" alt="A Good Girl’s Guide to Murder" class="cover" />
             <div class="book-meta">
               <span class="book-title">Good Girl’s Guide</span>
               <span class="book-score">93%</span>
@@ -100,7 +115,7 @@
         <!-- 5 -->
         <li class="book">
           <a href="/Book/they-both-die-at-the-end" class="book-card">
-            <img src="/img/they-both-die-at-the-end.jpg" alt="They Both Die at the End" class="cover"/>
+            <img src="/img/they-both-die-at-the-end.jpg" alt="They Both Die at the End" class="cover" />
             <div class="book-meta">
               <span class="book-title">They Both Die at the End</span>
               <span class="book-score">90%</span>
@@ -110,7 +125,7 @@
         <!-- 6 -->
         <li class="book">
           <a href="/Book/legend" class="book-card">
-            <img src="/img/legend.jpg" alt="Legend" class="cover"/>
+            <img src="/img/legend.jpg" alt="Legend" class="cover" />
             <div class="book-meta">
               <span class="book-title">Legend</span>
               <span class="book-score">91%</span>
@@ -120,7 +135,7 @@
         <!-- 7 -->
         <li class="book">
           <a href="/Book/scythe" class="book-card">
-            <img src="/img/scythe.jpg" alt="Scythe" class="cover"/>
+            <img src="/img/scythe.jpg" alt="Scythe" class="cover" />
             <div class="book-meta">
               <span class="book-title">Scythe</span>
               <span class="book-score">94%</span>
@@ -130,7 +145,7 @@
         <!-- 8 -->
         <li class="book">
           <a href="/Book/throne-of-glass" class="book-card">
-            <img src="/img/throne-of-glass.jpg" alt="Throne of Glass" class="cover"/>
+            <img src="/img/throne-of-glass.jpg" alt="Throne of Glass" class="cover" />
             <div class="book-meta">
               <span class="book-title">Throne of Glass</span>
               <span class="book-score">90%</span>
@@ -140,7 +155,7 @@
         <!-- 9 -->
         <li class="book">
           <a href="/Book/a-game-of-thrones" class="book-card">
-            <img src="/img/a-game-of-thrones.jpg" alt="A Game of Thrones" class="cover"/>
+            <img src="/img/a-game-of-thrones.jpg" alt="A Game of Thrones" class="cover" />
             <div class="book-meta">
               <span class="book-title">Game of Thrones</span>
               <span class="book-score">89%</span>
@@ -149,7 +164,6 @@
         </li>
       </ul>
     </section>
+
   </div>
 </section>
-
-

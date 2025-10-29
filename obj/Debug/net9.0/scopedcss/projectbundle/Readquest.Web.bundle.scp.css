@@ -121,7 +121,7 @@ header[b-13puqqc865] {
     url('/img/landing-bg.jpg') center/cover no-repeat fixed;
   color: var(--muted);
 }
-.hero-content[b-13puqqc865] { max-width: 720px; margin-top: 80px; }
-.hero h1[b-13puqqc865] { font-size: 64px; line-height: 1.12; margin-bottom: 18px; }
+.hero-content[b-13puqqc865] { max-width: 700px; margin-top: 80px; }
+.hero h1[b-13puqqc865] { font-size: 60px; line-height: 1.12; margin-bottom: 18px; }
 .hero p[b-13puqqc865] { font-size: 18px; color: var(--muted); margin-bottom: 24px; }
-.btn[b-13puqqc865] { background: var(--gold); color: #1a1610; padding: 12px 20px; font-weight: 700; border-radius: 10px; display: inline-block; }
+.btn[b-13puqqc865] { background: var(--gold); color: #1a1610; padding: 12px 20px; font-weight: 300; border-radius: 10px; display: inline-block; }

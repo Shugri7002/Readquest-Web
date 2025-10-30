@@ -95,5 +95,5 @@ C:\Readquest.Web\obj\Debug\net9.0\ref\Readquest.Web.dll
 C:\Readquest.Web\obj\Debug\net9.0\Readquest.Web.sourcelink.json
 C:\Readquest.Web\obj\Debug\net9.0\compressed\sntlfqzd22-yz0rljwjjq.gz
 C:\Readquest.Web\obj\Debug\net9.0\compressed\ww7gtsypzx-yz0rljwjjq.gz
-C:\Readquest.Web\obj\Debug\net9.0\compressed\0gugq7kjf2-b6z569mz69.gz
-C:\Readquest.Web\obj\Debug\net9.0\compressed\1e3ie0z24v-od38odvhw5.gz
+C:\Readquest.Web\obj\Debug\net9.0\compressed\1e3ie0z24v-iqtliszjh6.gz
+C:\Readquest.Web\obj\Debug\net9.0\compressed\0gugq7kjf2-l1hkofw476.gz

@@ -97,3 +97,4 @@ C:\Readquest.Web\obj\Debug\net9.0\compressed\sntlfqzd22-yz0rljwjjq.gz
 C:\Readquest.Web\obj\Debug\net9.0\compressed\ww7gtsypzx-yz0rljwjjq.gz
 C:\Readquest.Web\obj\Debug\net9.0\compressed\1e3ie0z24v-iqtliszjh6.gz
 C:\Readquest.Web\obj\Debug\net9.0\compressed\0gugq7kjf2-grecjjbn6y.gz
+C:\Readquest.Web\obj\Debug\net9.0\compressed\2fmivbfe6w-41r38ot4h1.gz

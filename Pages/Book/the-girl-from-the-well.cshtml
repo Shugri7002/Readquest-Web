@@ -1,20 +1,13 @@
-@page "/Book/girl-from-the-well"
-
+@page
 @{
-  ViewData["Title"] = "The Girl from the Well – Readquest";
-  var Book = new {
-    Title="The Girl from the Well",
-    Author="Rin Chupeco",
-    Cover="/img/books/girl-from-the-well.jpg",
-    Pages="272",
-    AgeVibe="16+ • Chilling, poetic, dark",
-    IfYouLike="The Ring",
-    Stars="★★★☆☆",
-    Popularity="Underrated",
-    Tags=new[]{ "ghosts","revenge","japanese myth" },
-    OneLiner="A vengeful ghost hunts murderers and protects the innocent.",
-    AboutTitle="About The Girl from the Well",
-    AboutText="Okiku seeks justice for the murdered, and a boy with a curse becomes her unlikely focus."
-  };
+  var title="The Girl from the Well"; var author="Rin Chupeco";
+  var cover="/img/books/girl-from-the-well.jpg"; var pages="304 pages";
+  var ageVibe="16+ • Chilling, poetic, dark"; var ifYouLike="The Ring";
+  var stars="★★★☆☆"; var pop="Underrated";
+  var tags=new[]{"ghosts","revenge","Japanese myth"};
+  var oneLiner="A ghost takes vengeance on murderers while protecting the innocent.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Okiku, a restless spirit, stalks those who prey on children and is drawn to a boy with a dangerous curse.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

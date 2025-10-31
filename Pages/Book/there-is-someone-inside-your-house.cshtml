@@ -1,20 +1,13 @@
-@page "/Book/there-someone-inside-your-house"
-
+@page
 @{
-  ViewData["Title"] = "There’s Someone Inside Your House – Readquest";
-  var Book = new {
-    Title="There’s Someone Inside Your House",
-    Author="Stephanie Perkins",
-    Cover="/img/books/there-someone-inside-your-house.jpg",
-    Pages="320",
-    AgeVibe="16+ • Suspenseful, bloody, romantic",
-    IfYouLike="Scream",
-    Stars="★★★★☆",
-    Popularity="Popular",
-    Tags=new[]{ "slasher","school","romance" },
-    OneLiner="A killer targets students—and Makani’s secrets may be next.",
-    AboutTitle="About There’s Someone Inside Your House",
-    AboutText="A wave of murders hits a small town while Makani tries to outrun her past."
-  };
+  var title="There’s Someone Inside Your House"; var author="Stephanie Perkins";
+  var cover="/img/books/there-someone-inside-your-house.jpg"; var pages="320 pages";
+  var ageVibe="16+ • Suspenseful, bloody, romantic"; var ifYouLike="Scream";
+  var stars="★★★★☆"; var pop="Popular";
+  var tags=new[]{"slasher","school","romance"};
+  var oneLiner="A killer targets students one by one—and Makani’s secrets might be next.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="As bodies fall, Makani must confront her past and unmask a murderer who is getting closer to her doorstep.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

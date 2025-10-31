@@ -1,20 +1,13 @@
-@page "/Book/serpent-and-dove"
-
+@page
 @{
-  ViewData["Title"] = "Serpent & Dove – Readquest";
-  var Book = new {
-    Title="Serpent & Dove",
-    Author="Shelby Mahurin",
-    Cover="/img/books/serpent-and-dove.jpg",
-    Pages="528",
-    AgeVibe="16+ • Romantic, dark, witty",
-    IfYouLike="forbidden romance",
-    Stars="★★★★☆",
-    Popularity="Popular",
-    Tags=new[]{ "witches","enemies-to-lovers","magic" },
-    OneLiner="A witch and a witch-hunter are forced into marriage—chaos ensues.",
-    AboutTitle="About Serpent & Dove",
-    AboutText="Lou and Reid must confront their beliefs and a deadly witch war as their grudging alliance turns to love."
-  };
+  var title="Serpent & Dove"; var author="Shelby Mahurin";
+  var cover="/img/books/serpent-and-dove.jpg"; var pages="544 pages";
+  var ageVibe="16+ • Romantic, dark, witty"; var ifYouLike="forbidden romance";
+  var stars="★★★★☆"; var pop="Popular";
+  var tags=new[]{"witches","enemies-to-lovers","magic"};
+  var oneLiner="A witch and a witch-hunter are forced into marriage—chaos ensues.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Lou and Reid’s unlikely bond sparks as deadly forces close in, testing loyalties, magic, and fate.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

@@ -1,19 +1,13 @@
-@page "/Book/anna-dressed-in-blood"
+@page
 @{
-  ViewData["Title"] = "Anna Dressed in Blood – Readquest";
-  var Book = new {
-    Title="Anna Dressed in Blood",
-    Author="Kendare Blake",
-    Cover="/img/books/anna-dressed-in-blood.jpg",
-    Pages="320",
-    AgeVibe="15+ • Haunting, tragic, eerie",
-    IfYouLike="Supernatural",
-    Stars="★★★★☆",
-    Popularity="Popular",
-    Tags=new[]{ "ghosts","murder","romance" },
-    OneLiner="A ghost hunter meets the vengeful spirit of a murdered girl.",
-    AboutTitle="About Anna Dressed in Blood",
-    AboutText="Cas hunts the dead—until he meets Anna, a lethal spirit bound by a horrific past."
-  };
+  var title="Anna Dressed in Blood"; var author="Kendare Blake";
+  var cover="/img/books/anna-dressed-in-blood.jpg"; var pages="320 pages";
+  var ageVibe="15+ • Haunting, tragic, eerie"; var ifYouLike="Supernatural";
+  var stars="★★★★☆"; var pop="Popular";
+  var tags=new[]{"ghosts","murder","romance"};
+  var oneLiner="A ghost hunter meets the vengeful spirit of a murdered girl.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Cas Lowood hunts Anna Korlov, but the deadly ghost isn’t what she seems—and neither is the house that holds her.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

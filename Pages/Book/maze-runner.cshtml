@@ -1,20 +1,13 @@
-@page "/Book/maze-runner"
-
+@page
 @{
-  ViewData["Title"] = "The Maze Runner – Readquest";
-  var Book = new {
-    Title="The Maze Runner",
-    Author="James Dashner",
-    Cover="/img/books/maze-runner.jpg",
-    Pages="384",
-    AgeVibe="15+ • Intense, thrilling, desperate",
-    IfYouLike="escape stories",
-    Stars="★★★★☆",
-    Popularity="Popular",
-    Tags=new[]{ "survival","dystopia","mystery" },
-    OneLiner="Thomas wakes in a deadly maze and must find a way out before time runs out.",
-    AboutTitle="About The Maze Runner",
-    AboutText="With memories erased, the Gladers must survive a shifting labyrinth and uncover why they were sent there."
-  };
+  var title="The Maze Runner"; var author="James Dashner";
+  var cover="/img/books/maze-runner.jpg"; var pages="384 pages";
+  var ageVibe="15+ • Intense, thrilling, desperate"; var ifYouLike="escape stories";
+  var stars="★★★★☆"; var pop="Popular";
+  var tags=new[]{"survival","dystopia","mystery"};
+  var oneLiner="Thomas wakes up in a deadly maze and must find a way out before time runs out.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="With no memories, Thomas joins the Gladers to solve the Maze’s shifting traps and discover the truth about their prison.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

@@ -1,20 +1,13 @@
-@page "/Book/divergent"
-
+@page
 @{
-  ViewData["Title"] = "Divergent – Readquest";
-  var Book = new {
-    Title="Divergent",
-    Author="Veronica Roth",
-    Cover="/img/books/divergent.jpg",
-    Pages="496",
-    AgeVibe="15+ • Dystopia, courage, rebellion",
-    IfYouLike="The Hunger Games",
-    Stars="★★★★★",
-    Popularity="Classic",
-    Tags=new[]{ "dystopia","courage","rebellion" },
-    OneLiner="In a divided society, Tris discovers she’s Divergent—and becomes a target.",
-    AboutTitle="About Divergent",
-    AboutText="In post-war Chicago, society is split into factions. Tris Prior’s secret threatens the order as she uncovers a dangerous conspiracy."
-  };
+  var title="Divergent"; var author="Veronica Roth";
+  var cover="/img/books/divergent.jpg"; var pages="496 pages";
+  var ageVibe="15+ • Rebellious, powerful, brave"; var ifYouLike="The Hunger Games";
+  var stars="★★★★★"; var pop="Classic";
+  var tags=new[]{"dystopia","courage","rebellion"};
+  var oneLiner="In a divided society, Tris discovers she’s divergent—and becomes a target.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Choosing Dauntless changes Tris’s life as she uncovers conspiracies that threaten every faction in the city.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

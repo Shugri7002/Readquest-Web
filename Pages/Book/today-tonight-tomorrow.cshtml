@@ -1,20 +1,13 @@
-@page "/Book/today-tonight-tomorrow"
-
+@page
 @{
-  ViewData["Title"] = "Today Tonight Tomorrow – Readquest";
-  var Book = new {
-    Title="Today Tonight Tomorrow",
-    Author="Rachel Lynn Solomon",
-    Cover="/img/books/today-tonight-tomorrow.jpg",
-    Pages="432",
-    AgeVibe="16+ • Funny, romantic, clever",
-    IfYouLike="academic rivals",
-    Stars="★★★★★",
-    Popularity="Trendy",
-    Tags=new[]{ "rivals-to-lovers","school","humor" },
-    OneLiner="Two academic rivals team up for one wild night before graduation.",
-    AboutTitle="About Today Tonight Tomorrow",
-    AboutText="Rowan and Neil’s rivalry twists into romance during a citywide senior scavenger hunt."
-  };
+  var title="Today Tonight Tomorrow"; var author="Rachel Lynn Solomon";
+  var cover="/img/books/today-tonight-tomorrow.jpg"; var pages="432 pages";
+  var ageVibe="16+ • Funny, romantic, clever"; var ifYouLike="academic rivals";
+  var stars="★★★★★"; var pop="Trendy";
+  var tags=new[]{"rivals-to-lovers","school","humor"};
+  var oneLiner="Two academic rivals team up for one wild night before graduation.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Rowan and Neil race through Seattle’s senior scavenger hunt and discover they may not hate each other after all.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

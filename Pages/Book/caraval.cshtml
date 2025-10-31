@@ -1,21 +1,13 @@
-@page "/Book/caraval"
-
+@page
 @{
-  ViewData["Title"] = "Caraval – Readquest";
-  var Book = new {
-    Title="Caraval",
-    Author="Stephanie Garber",
-    Cover="/img/books/caraval.jpg",
-    Pages="416",
-    AgeVibe="15+ • Whimsical, romantic, mysterious",
-    IfYouLike="mystery and illusions",
-    Stars="★★★★★",
-    Popularity="Popular",
-    Tags=new[]{ "magic","mystery","sisters" },
-    OneLiner="Scarlett enters a magical game to rescue her sister.",
-    AboutTitle="About Caraval",
-    AboutText="In the dazzling world of Caraval, nothing is quite real—even the stakes. Scarlett must solve the game before it’s too late."
-  };
+  var title="Caraval"; var author="Stephanie Garber";
+  var cover="/img/books/caraval.jpg"; var pages="416 pages";
+  var ageVibe="15+ • Whimsical, romantic, mysterious"; var ifYouLike="mystery and illusions";
+  var stars="★★★★★"; var pop="Popular";
+  var tags=new[]{"magic","mystery","sisters"};
+  var oneLiner="Scarlett joins a mysterious magical game to rescue her sister.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Invited to Caraval, Scarlett must outwit illusions, clues, and danger before time runs out and her sister is lost forever.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-=<partial name="_BookDetail" model="Book" />
-
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

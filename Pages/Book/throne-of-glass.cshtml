@@ -1,20 +1,13 @@
-@page "/Book/throne-of-glass"
-
+@page
 @{
-  ViewData["Title"] = "Throne of Glass – Readquest";
-  var Book = new {
-    Title="Throne of Glass",
-    Author="Sarah J. Maas",
-    Cover="/img/books/throne-of-glass.jpg",
-    Pages="432",
-    AgeVibe="16+ • Fierce, romantic, powerful",
-    IfYouLike="strong heroines",
-    Stars="★★★★★",
-    Popularity="Trendy",
-    Tags=new[]{ "assassins","magic","romance" },
-    OneLiner="A deadly assassin must win a royal competition to earn her freedom.",
-    AboutTitle="About Throne of Glass",
-    AboutText="Celaena Sardothien fights for freedom among court intrigue, dark magic, and dangerous rivals."
-  };
+  var title="Throne of Glass"; var author="Sarah J. Maas";
+  var cover="/img/books/throne-of-glass.jpg"; var pages="432 pages";
+  var ageVibe="16+ • Fierce, romantic, powerful"; var ifYouLike="strong heroines";
+  var stars="★★★★★"; var pop="Trendy";
+  var tags=new[]{"assassins","magic","romance"};
+  var oneLiner="A deadly assassin must win a royal competition to earn her freedom.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Celaena Sardothien fights for her life and liberty in the king’s tournament while uncovering ancient dark magic.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

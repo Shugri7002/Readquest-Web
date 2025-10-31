@@ -1,20 +1,13 @@
-@page "/Book/clown-in-a-cornfield"
-
+@page
 @{
-  ViewData["Title"] = "Clown in a Cornfield – Readquest";
-  var Book = new {
-    Title="Clown in a Cornfield",
-    Author="Adam Cesare",
-    Cover="/img/books/clown-in-a-cornfield.jpg",
-    Pages="352",
-    AgeVibe="16+ • Violent, thrilling, dark",
-    IfYouLike="classic horror movies",
-    Stars="★★★★☆",
-    Popularity="Popular",
-    Tags=new[]{ "slasher","small town","survival" },
-    OneLiner="Teens are hunted by a killer clown in a dying town.",
-    AboutTitle="About Clown in a Cornfield",
-    AboutText="Quinn’s new town turns into a nightmare when masked killings expose ugly secrets."
-  };
+  var title="Clown in a Cornfield"; var author="Adam Cesare";
+  var cover="/img/books/clown-in-a-cornfield.jpg"; var pages="352 pages";
+  var ageVibe="16+ • Violent, thrilling, dark"; var ifYouLike="classic horror movies";
+  var stars="★★★★☆"; var pop="Popular";
+  var tags=new[]{"slasher","small town","survival"};
+  var oneLiner="Teens are hunted by a killer clown in a dying town.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Quinn’s new town becomes a nightmare when masked killings expose ugly secrets and a fight to stay alive.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

@@ -1,20 +1,23 @@
-@page "/Book/hunger-games"
-
+@page
 @{
-  ViewData["Title"] = "The Hunger Games – Readquest";
-  var Book = new {
-    Title="The Hunger Games",
-    Author="Suzanne Collins",
-    Cover="/img/books/hunger-games.jpg",
-    Pages="384",
-    AgeVibe="15+ • Dark, fast-paced, emotional",
-    IfYouLike="strong female leads",
-    Stars="★★★★★",
-    Popularity="Classic",
-    Tags=new[]{ "dystopia","survival","rebellion" },
-    OneLiner="Katniss fights to survive a televised death match in a corrupt society.",
-    AboutTitle="About The Hunger Games",
-    AboutText="When her sister is chosen, Katniss volunteers and becomes a symbol against the Capitol’s brutal system."
-  };
+  // CONFIG
+  var title="The Hunger Games";
+  var author="Suzanne Collins";
+  var cover="/img/books/hunger-games.jpg";
+  var pages="384 pages";
+  var ageVibe="15+ • Dark, fast-paced, emotional";
+  var ifYouLike="strong female leads";
+  var stars="★★★★★"; var pop="Classic";
+  var tags=new[]{"dystopia","survival","rebellion"};
+  var oneLiner="Katniss must fight to survive a televised death match in a corrupt society.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="When her sister is chosen, Katniss volunteers and becomes a symbol against the Capitol’s brutal system.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame">
+  <figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure>
+  <div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div>
+    <ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul>
+    <div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div>
+  </div>
+</div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

@@ -1,20 +1,13 @@
-@page "/Book/legendborn"
-
+@page
 @{
-  ViewData["Title"] = "Legendborn – Readquest";
-  var Book = new {
-    Title="Legendborn",
-    Author="Tracy Deonn",
-    Cover="/img/books/legendborn.jpg",
-    Pages="512",
-    AgeVibe="16+ • Epic, emotional, empowering",
-    IfYouLike="modern fantasy & mythology",
-    Stars="★★★★★",
-    Popularity="Popular",
-    Tags=new[]{ "arthurian","magic","grief" },
-    OneLiner="A girl discovers a secret order descended from King Arthur.",
-    AboutTitle="About Legendborn",
-    AboutText="At UNC, Bree uncovers her hidden power and a centuries-old war waged by the Legendborn Order."
-  };
+  var title="Legendborn"; var author="Tracy Deonn";
+  var cover="/img/books/legendborn.jpg"; var pages="512 pages";
+  var ageVibe="16+ • Epic, emotional, empowering"; var ifYouLike="modern fantasy & mythology";
+  var stars="★★★★★"; var pop="Popular";
+  var tags=new[]{"Arthurian","magic","grief"};
+  var oneLiner="A girl discovers a secret order descended from King Arthur.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="At UNC, Bree uncovers hidden power and a centuries-old war waged by the Legendborn Order.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

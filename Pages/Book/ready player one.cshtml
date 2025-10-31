@@ -1,20 +1,13 @@
-@page "/Book/ready-player-one"
-
+@page
 @{
-  ViewData["Title"] = "Ready Player One – Readquest";
-  var Book = new {
-    Title="Ready Player One",
-    Author="Ernest Cline",
-    Cover="/img/books/ready-player-one.jpg",
-    Pages="400",
-    AgeVibe="16+ • Nerdy, thrilling, nostalgic",
-    IfYouLike="video games & 80’s culture",
-    Stars="★★★★★",
-    Popularity="Classic",
-    Tags=new[]{ "virtual reality","gaming" },
-    OneLiner="A gamer joins a VR treasure hunt for a fortune and freedom.",
-    AboutTitle="About Ready Player One",
-    AboutText="Wade Watts races through 80s-obsessed puzzles in the OASIS against ruthless corporate rivals."
-  };
+  var title="Ready Player One"; var author="Ernest Cline";
+  var cover="/img/books/ready-player-one.jpg"; var pages="384 pages";
+  var ageVibe="16+ • Nerdy, thrilling, nostalgic"; var ifYouLike="video games & 80’s culture";
+  var stars="★★★★★"; var pop="Classic";
+  var tags=new[]{"virtual reality","gaming"};
+  var oneLiner="A gamer joins a VR treasure hunt for a fortune and freedom.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Wade Watts searches the OASIS for Halliday’s Easter egg while battling powerful corporate rivals.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

@@ -1,20 +1,13 @@
-@page "/Book/renegades"
-
+@page
 @{
-  ViewData["Title"] = "Renegades – Readquest";
-  var Book = new {
-    Title="Renegades",
-    Author="Marissa Meyer",
-    Cover="/img/books/renegades.jpg",
-    Pages="560",
-    AgeVibe="15+ • Heroic, action-packed",
-    IfYouLike="Marvel vibes",
-    Stars="★★★★☆",
-    Popularity="Popular",
-    Tags=new[]{ "superheroes","rebellion" },
-    OneLiner="A girl raised by villains must infiltrate the hero organization.",
-    AboutTitle="About Renegades",
-    AboutText="Nova seeks revenge on the Renegades but meets a hero who challenges everything she believes."
-  };
+  var title="Renegades"; var author="Marissa Meyer";
+  var cover="/img/books/renegades.jpg"; var pages="576 pages";
+  var ageVibe="15+ • Heroic, action-packed"; var ifYouLike="Marvel vibes";
+  var stars="★★★★☆"; var pop="Popular";
+  var tags=new[]{"superheroes","rebellion"};
+  var oneLiner="A girl raised by villains must infiltrate the hero organization.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Nova seeks revenge on the Renegades, but growing bonds challenge her loyalties on both sides.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

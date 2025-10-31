@@ -1,20 +1,13 @@
-@page "/Book/the-upside-of-falling"
-
+@page
 @{
-  ViewData["Title"] = "The Upside of Falling – Readquest";
-  var Book = new {
-    Title="The Upside of Falling",
-    Author="Alex Light",
-    Cover="/img/books/upside-of-falling.jpg",
-    Pages="288",
-    AgeVibe="15+ • Sweet, light, funny",
-    IfYouLike="To All the Boys I’ve Loved Before",
-    Stars="★★★★☆",
-    Popularity="Popular",
-    Tags=new[]{ "fake dating","school","humor" },
-    OneLiner="A fake relationship starts for fun—until real feelings appear.",
-    AboutTitle="About The Upside of Falling",
-    AboutText="Becca and Brett fake-date to get through high school drama and discover something real."
-  };
+  var title="The Upside of Falling"; var author="Alex Light";
+  var cover="/img/books/the-upside-of-falling.jpg"; var pages="288 pages";
+  var ageVibe="15+ • Sweet, light, funny"; var ifYouLike="To All the Boys I’ve Loved Before";
+  var stars="★★★★☆"; var pop="Popular";
+  var tags=new[]{"fake dating","school","humor"};
+  var oneLiner="A fake relationship starts for fun—until real feelings appear.";
+  var aboutH2=$"About {title}";
+  var aboutTxt="Becca and Brett pretend to date to solve separate problems, but their staged romance turns real.";
+  ViewData["Title"]=$"{title} – Readquest";
 }
-<partial name="_BookDetail" model="Book" />
+<section class="book-hero"><div class="book-inner"><div class="book-frame"><figure class="cover-wrap"><img class="book-cover" src="@cover" alt="@title"/><figcaption class="cover-meta"><span class="pages">@pages</span><div class="chips">@foreach(var t in tags){<span class="chip">@t</span>}</div></figcaption></figure><div class="book-info"><h1 class="book-title">@title</h1><div class="byline">by <strong>@author</strong></div><ul class="meta-list"><li>@ageVibe</li><li>If you like <b>@ifYouLike</b></li><li class="rating"><span class="stars">@stars</span><span class="muted">&nbsp;@pop</span></li><li>@string.Join(" • ",tags)</li><li class="one-liner">@oneLiner</li></ul><div class="cta-row"><button class="btn btn-gold">Start Reading</button><button class="btn btn-outline">Mark as Finished</button></div></div></div><div class="book-section"><h2>@aboutH2</h2><p>@aboutTxt</p></div></div></section>

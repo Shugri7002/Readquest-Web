@@ -1,4 +1,4 @@
-@page
+@page "/Auth/Genre"
 @model Readquest.Web.Pages.Auth.GenresModel
 @{
     ViewData["Title"] = "Genre Selection – Readquest";
@@ -19,7 +19,10 @@
       }
     </form>
 
-    <button form="genreForm" type="submit" class="btn-gold btn-wide" id="continueBtn" disabled>
+<form method="post" asp-page-handler="Continue">
+  <!-- jouw genre tiles/checkboxes blijven -->
+  <button type="submit" class="btn btn-gold">Continue</button>
+</form>
       Continue
     </button>
   </div>

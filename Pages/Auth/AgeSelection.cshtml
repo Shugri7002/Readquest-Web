@@ -1,4 +1,4 @@
-@page
+@page "/Auth/AgeSelection"
 @model Readquest.Web.Pages.Auth.AgeSelectionModel
 @{
     ViewData["Title"] = "Age Selection – Readquest";
@@ -30,7 +30,10 @@
 
       <span asp-validation-for="SelectedAge" class="flash"></span>
 
-      <button type="submit" class="btn btn-gold age-continue">Continue</button>
+<form method="post" asp-page-handler="Continue">
+  <!-- jouw age opties blijven -->
+  <button type="submit" class="btn btn-gold">Continue</button>
+</form>
     </form>
   </div>
 </section>

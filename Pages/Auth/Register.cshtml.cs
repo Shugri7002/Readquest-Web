@@ -32,6 +32,8 @@ public class RegisterModel : PageModel
         }
 
         // TODO: save user to DB (later)
-        return RedirectToPage("/Auth/Login");
+    return Redirect("/Auth/AgeSelection");
     }
+
+
 }

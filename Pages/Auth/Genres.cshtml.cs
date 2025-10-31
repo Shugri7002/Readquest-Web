@@ -26,4 +26,9 @@ public class GenresModel : PageModel
         // TODO: send to Reading Goal page when you build it
         return RedirectToPage("/Auth/ReadingGoal"); // change if needed
     }
+    public IActionResult OnPostContinue()
+{
+    return Redirect("/Auth/ReadingGoal");
+}
+
 }

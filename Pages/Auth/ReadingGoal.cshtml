@@ -1,4 +1,4 @@
-@page
+@page "/Auth/ReadingGoal"
 @model Readquest.Web.Pages.Auth.ReadingGoalModel
 @{
     ViewData["Title"] = "Reading Goal – Readquest";
@@ -26,7 +26,10 @@
       </button>
     </div>
 
-    <button class="btn-gold goal-continue" disabled>Continue</button>
+<form method="post" asp-page-handler="Finish">
+      <!-- your goal tiles -->
+      <button class="goal-continue">Finish</button>
+    </form>
   </div>
 </section>
 

@@ -9,7 +9,7 @@ namespace Readquest.Web.Pages.Auth
         [BindProperty]
         public int? SelectedAge { get; set; }
 
-        public void OnGet() {}
+        public void OnGet() { }
 
         public IActionResult OnPost()
         {
@@ -22,5 +22,11 @@ namespace Readquest.Web.Pages.Auth
             // Go to Genres and carry the chosen age (use TempData if you prefer)
             return RedirectToPage("/Auth/Genres", new { age = SelectedAge.Value });
         }
+        public IActionResult OnPostContinue()
+{
+    return Redirect("/Auth/Genren");
+}
+
     }
+    
 }

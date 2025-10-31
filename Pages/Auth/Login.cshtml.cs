@@ -18,10 +18,10 @@ public class LoginModel : PageModel
         if (!string.IsNullOrWhiteSpace(Email) && !string.IsNullOrWhiteSpace(Password))
         {
             // TODO: real auth
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Home/Dashboard");
         }
 
         Message = "Please enter your email and password.";
-        return Page();
+        return RedirectToPage("/Auth/Login");
     }
 }

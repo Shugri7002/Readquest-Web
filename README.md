@@ -44,10 +44,10 @@ Some features like login and badges are planned but not finished yet.
 
 ## Screenshots
 ## Screenshots
-![Homepage](screenshots-homepage.png)  
-![Map Page](screenshots-map.png)  
-![Dashboard Page](screenshots-dashboard.png) 
-![Profile Page](screenshots-profile.png)
+![Homepage](img/screenshots-homepage.png)  
+![Map Page](img/screenshots-map.png)  
+![Dashboard Page](img/screenshots-dashboard.png) 
+![Profile Page](img/screenshots-profile.png)
 
 ## Author
 

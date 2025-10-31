@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Readquest.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae4b8f2ef4527657968bf7f5c6279e9b327a605d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7fe2a57c5e7646a47817dfa9474552026fc39f6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Readquest.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Readquest.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

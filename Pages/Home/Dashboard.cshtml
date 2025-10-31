@@ -1,5 +1,6 @@
 @page "/Dashboard"
 @model Readquest.Web.Pages.Home.DashboardModel
+
 @{
     ViewData["Title"] = "Home/Dashboard – Readquest";
 }
@@ -9,60 +10,63 @@
     <h1 class="dash-title">Welcome, adventurer</h1>
     <p class="dash-sub">Continue your journey through the worlds of stories.</p>
 
-    <div class="dash-grid">
-      <!-- LEFT: compact card -->
-      <aside class="dash-card card-compact">
-        <h3>Discover the Realm</h3>
-        <p class="muted">Explore your reading journeys<br>across worlds</p>
+<div class="dash-grid">
+  <!-- LEFT: compact card -->
+  <aside class="dash-card card-compact">
+    <h3>Discover the Realm</h3>
+    <p class="muted">Explore your reading journeys<br>across worlds</p>
 
-        <div class="icon-pill">
-          <!-- Map icon (gold) -->
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M15 4l-6 2-6-2v15l6 2 6-2 6 2V6l-6-2zm-6 3l6-2v12l-6 2V7z"/>
-          </svg>
-        </div>
-
-        <button class="btn btn-gold btn-wide">Enter Map</button>
-      </aside>
-
-      <!-- CENTER: feature card -->
-      <main class="dash-card card-feature">
-        <div class="feature-body">
-          <div class="feature-text">
-            <h2 class="feature-title">A Game of Thrones</h2>
-            <div class="byline">By George R.R. Martin</div>
-
-            <div class="progress-wrap">
-              <div class="progress">
-                <div class="bar" style="width:50%"></div>
-              </div>
-              <div class="progress-meta">
-                <span>360/720</span>
-                <span>50%</span>
-              </div>
-              <button class="btn btn-gold">Continue reading</button>
-            </div>
-          </div>
-
-          <img class="cover-lg" src="/img/books/a-game-of-thrones.jpg" alt="A Game of Thrones">
-        </div>
-      </main>
-
-      <!-- RIGHT: compact card -->
-      <aside class="dash-card card-compact">
-        <h3>Today’s Challenge</h3>
-        <p class="muted">Read for 30 minutes • 50&nbsp;XP</p>
-
-        <div class="icon-pill">
-          <!-- Clock icon (gold) -->
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm1 10.59l3.3 1.9-1 1.73L11 13V7h2z"/>
-          </svg>
-        </div>
-
-        <button class="btn btn-gold btn-wide">Start Challenge</button>
-      </aside>
+    <div class="icon-pill">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M15 4l-6 2-6-2v15l6 2 6-2 6 2V6l-6-2zm-6 3l6-2v12l-6 2V7z"/>
+      </svg>
     </div>
+
+    <form method="post" asp-page-handler="Map">
+      <button type="submit" class="btn btn-gold btn-wide">Enter Map</button>
+    </form>
+  </aside>
+
+  <!-- CENTER: feature card -->
+  <main class="dash-card card-feature">
+    <div class="feature-body">
+      <div class="feature-text">
+        <h2 class="feature-title">A Game of Thrones</h2>
+        <div class="byline">By George R.R. Martin</div>
+
+        <div class="progress-wrap">
+          <div class="progress">
+            <div class="bar" style="width:50%"></div>
+          </div>
+          <div class="progress-meta">
+            <span>360/720</span>
+            <span>50%</span>
+          </div>
+          <button class="btn btn-gold">Continue reading</button>
+        </div>
+      </div>
+
+      <img class="cover-lg" src="/img/books/a-game-of-thrones.jpg" alt="A Game of Thrones">
+    </div>
+  </main>
+
+  <!-- RIGHT: compact card -->
+  <aside class="dash-card card-compact">
+    <h3>Today’s Challenge</h3>
+    <p class="muted">Read for 30 minutes • 50&nbsp;XP</p>
+
+    <div class="icon-pill">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2a10 10 0 1010 10A10.011 10.011 0 0012 2zm1 10.59l3.3 1.9-1 1.73L11 13V7h2z"/>
+      </svg>
+    </div>
+
+    <form method="post" asp-page-handler="Challenge">
+      <button type="submit" class="btn btn-gold btn-wide">Start Challenge</button>
+    </form>
+  </aside>
+</div>
+
   </div>
 </section>
 

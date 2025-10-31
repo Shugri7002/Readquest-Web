@@ -7,16 +7,14 @@ public class DashboardModel : PageModel
 {
     public void OnGet() { }
 
-    // /Home/Dashboard?handler=EnterMap
-    public IActionResult OnPostEnterMap()
+    public IActionResult OnPostMap()
     {
-        // If Discover has @page "/Discover"
         return Redirect("/Discover");
     }
 
-    // /Home/Dashboard?handler=StartChallenge
-    public IActionResult OnPostStartChallenge()
+    public IActionResult OnPostChallenge()
     {
         return Redirect("/Quests");
     }
 }
+

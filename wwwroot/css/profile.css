@@ -185,17 +185,19 @@
 
 /* Achievements layout */
 .achievements {
-  display: grid;
-  grid-template-rows: auto auto 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 18px;
 }
+
 
 .achievements h3 {
   font-family: 'Playfair Display', serif;
   font-size: 28px;
   font-weight: 600;
   color: var(--text);
-  margin: 0;
+  margin: 20px;
 }
 
 /* Badge grid */

@@ -43,10 +43,9 @@ Some features like login and badges are planned but not finished yet.
 * Database connection for user data
 
 ## Screenshots
-## Screenshots
+![Dashboard Page](img/screenshots/screenshots-dashboard.png) 
 ![Homepage](img/screenshots/screenshots-homepage.png)  
 ![Map Page](img/screenshots/screenshots-map.png)  
-![Dashboard Page](img/screenshots/screenshots-dashboard.png) 
 ![Profile Page](img/screenshots/screenshots-profile.png)
 
 ## Author

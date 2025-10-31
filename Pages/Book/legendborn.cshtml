@@ -1,38 +1,20 @@
-@page
+@page "/Book/legendborn"
+
 @{
-    ViewData["Title"] = "Legendborn – Readquest";
+  ViewData["Title"] = "Legendborn – Readquest";
+  var Book = new {
+    Title="Legendborn",
+    Author="Tracy Deonn",
+    Cover="/img/books/legendborn.jpg",
+    Pages="512",
+    AgeVibe="16+ • Epic, emotional, empowering",
+    IfYouLike="modern fantasy & mythology",
+    Stars="★★★★★",
+    Popularity="Popular",
+    Tags=new[]{ "arthurian","magic","grief" },
+    OneLiner="A girl discovers a secret order descended from King Arthur.",
+    AboutTitle="About Legendborn",
+    AboutText="At UNC, Bree uncovers her hidden power and a centuries-old war waged by the Legendborn Order."
+  };
 }
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/legendborn.jpg" alt="Legendborn"/>
-      <figcaption class="cover-meta">
-        <span class="pages">512 pages</span>
-        <div class="chips"><span class="chip">arthurian</span><span class="chip">magic</span><span class="chip">grief</span></div>
-      </figcaption>
-    </figure>
-
-    <div class="book-info">
-      <h1 class="book-title">Legendborn</h1>
-      <div class="byline">by <strong>Tracy Deonn</strong></div>
-      <ul class="meta-list">
-        <li>16+ • Epic, emotional, empowering</li>
-        <li>If you like <b>modern fantasy &amp; mythology</b></li>
-        <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Popular</span></li>
-        <li>arthurian • magic • grief</li>
-        <li class="one-liner">A girl discovers a secret order descended from King Arthur.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="book-section">
-    <h2>About Legendborn</h2>
-    <p>Bree Matthews uncovers ancestral power and a hidden war on her campus, forcing her to confront grief and destiny.</p>
-  </div>
-          <a href="/Book/legendborn" class="btn btn-gold">View Details</a>
-
-</div></section>
+<partial name="_BookDetail" model="Book" />

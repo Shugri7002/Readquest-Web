@@ -1,38 +1,20 @@
-@page
+@page "/Book/legend"
+
 @{
-    ViewData["Title"] = "Legend – Readquest";
+  ViewData["Title"] = "Legend – Readquest";
+  var Book = new {
+    Title="Legend",
+    Author="Marie Lu",
+    Cover="/img/books/legend.jpg",
+    Pages="336",
+    AgeVibe="15+ • Gritty, fast-paced, political",
+    IfYouLike="futuristic thrillers",
+    Stars="★★★★☆",
+    Popularity="Very popular",
+    Tags=new[]{ "dystopia","action","romance" },
+    OneLiner="Two teens on opposite sides of a divided city uncover government lies.",
+    AboutTitle="About Legend",
+    AboutText="Prodigy June and criminal Day collide in a chase that exposes corruption at the heart of their nation."
+  };
 }
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/legend.jpg" alt="Legend"/>
-      <figcaption class="cover-meta">
-        <span class="pages">320 pages</span>
-        <div class="chips"><span class="chip">dystopia</span><span class="chip">action</span><span class="chip">romance</span></div>
-      </figcaption>
-    </figure>
-
-    <div class="book-info">
-      <h1 class="book-title">Legend</h1>
-      <div class="byline">by <strong>Marie Lu</strong></div>
-      <ul class="meta-list">
-        <li>15+ • Gritty, fast-paced, political</li>
-        <li>If you like <b>futuristic thrillers</b></li>
-        <li class="rating"><span class="stars">★★★★☆</span><span class="muted">&nbsp;Very popular</span></li>
-        <li>dystopia • action • romance</li>
-        <li class="one-liner">Two teens on opposite sides uncover government lies.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="book-section">
-    <h2>About Legend</h2>
-    <p>June, the prodigy, and Day, the most-wanted criminal, collide in a cat-and-mouse that exposes the Republic’s darkest secrets.</p>
-  </div>
-          <a href="/Book/legend" class="btn btn-gold">View Details</a>
-
-</div></section>
+<partial name="_BookDetail" model="Book" />

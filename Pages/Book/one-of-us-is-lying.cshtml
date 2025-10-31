@@ -1,36 +1,20 @@
-@page
-@{
-    ViewData["Title"] = "One of Us Is Lying – Readquest";
-}
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/one-of-us-is-lying.jpg" alt="One of Us Is Lying"/>
-      <figcaption class="cover-meta">
-        <span class="pages">368 pages</span>
-        <div class="chips"><span class="chip">murder</span><span class="chip">secrets</span><span class="chip">school</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">One of Us Is Lying</h1>
-      <div class="byline">by <strong>Karen M. McManus</strong></div>
-      <ul class="meta-list">
-        <li>15+ • Twisty, fast-paced, shocking</li>
-        <li>If you like <b>Pretty Little Liars</b></li>
-        <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Trendy</span></li>
-        <li>murder • secrets • school</li>
-        <li class="one-liner">Five students go to detention—only four walk out alive.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About One of Us Is Lying</h2>
-    <p>Everyone has something to hide—some lies are deadly.</p>
-  </div>
-          <a href="/Book/one-of-us-is-lying" class="btn btn-gold">View Details</a>
+@page "/Book/one-of-us-is-lying"
 
-</div></section>
+@{
+  ViewData["Title"] = "One of Us Is Lying – Readquest";
+  var Book = new {
+    Title="One of Us Is Lying",
+    Author="Karen M. McManus",
+    Cover="/img/books/one-of-us-is-lying.jpg",
+    Pages="368",
+    AgeVibe="15+ • Twisty, fast-paced, shocking",
+    IfYouLike="Pretty Little Liars",
+    Stars="★★★★☆",
+    Popularity="Trendy",
+    Tags=new[]{ "murder","secrets","school" },
+    OneLiner="Five students enter detention—one dies, four are suspects.",
+    AboutTitle="About One of Us Is Lying",
+    AboutText="Everyone has something to hide; the truth is messier than anyone expects."
+  };
+}
+<partial name="_BookDetail" model="Book" />

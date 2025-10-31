@@ -1,41 +1,20 @@
-@page
+@page "/Book/six-of-crows"
+
 @{
-    ViewData["Title"] = "Six of Crows – Readquest";
+  ViewData["Title"] = "Six of Crows – Readquest";
+  var Book = new {
+    Title="Six of Crows",
+    Author="Leigh Bardugo",
+    Cover="/img/books/six-of-crows.jpg",
+    Pages="465",
+    AgeVibe="16+ • Dark, clever, intense",
+    IfYouLike="Peaky Blinders with magic",
+    Stars="★★★★★",
+    Popularity="Very popular",
+    Tags=new[]{ "heist","magic","crime" },
+    OneLiner="Six outcasts plan an impossible heist in a gritty fantasy city.",
+    AboutTitle="About Six of Crows",
+    AboutText="In Ketterdam, criminal prodigy Kaz Brekker leads a crew on a high-stakes heist that could change their lives forever."
+  };
 }
-
-<section class="book-hero">
-  <div class="book-inner">
-    <div class="book-frame">
-      <figure class="cover-wrap">
-        <img class="book-cover" src="/img/books/six-of-crows.jpg" alt="Six of Crows"/>
-        <figcaption class="cover-meta">
-          <span class="pages">465 pages</span>
-          <div class="chips"><span class="chip">heist</span><span class="chip">magic</span><span class="chip">crime</span></div>
-        </figcaption>
-      </figure>
-
-      <div class="book-info">
-        <h1 class="book-title">Six of Crows</h1>
-        <div class="byline">by <strong>Leigh Bardugo</strong></div>
-        <ul class="meta-list">
-          <li>16+ • Dark, clever, intense</li>
-          <li>If you like <b>Peaky Blinders with magic</b></li>
-          <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Very popular</span></li>
-          <li>heist • magic • crime</li>
-          <li class="one-liner">Six outcasts plan an impossible heist in a gritty fantasy city.</li>
-        </ul>
-        <div class="cta-row">
-          <button class="btn btn-gold">Start Reading</button>
-          <button class="btn btn-hollow">Mark as Finished</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="book-section">
-      <h2>About Six of Crows</h2>
-      <p>Ketterdam’s criminal prodigy assembles a crew for a payday beyond imagining—if they can survive each other and the job.</p>
-    </div>
-            <a href="/Book/six-of-crows" class="btn btn-gold">View Details</a>
-
-  </div>
-</section>
+<partial name="_BookDetail" model="Book" />

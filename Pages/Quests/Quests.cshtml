@@ -1,0 +1,23 @@
+@page "/Quests"
+@model Readquest.Web.Pages.Quests.QuestsModel
+@{
+    ViewData["Title"] = "Quests – Readquest";
+}
+
+<section class="quests-hero">
+  <div class="quests-inner">
+    <h1 class="quests-title">Quests</h1>
+    <p class="quests-sub">Complete challenges and earn XP to rise in rank</p>
+
+    <div class="quests-board">
+      @foreach (var q in Model.Quests)
+      {
+        <article class="quest-row">
+          <div class="quest-text">@q.Title</div>
+          <div class="quest-xp">+@q.XP XP</div>
+          <button class="btn btn-gold">Start Quest</button>
+        </article>
+      }
+    </div>
+  </div>
+</section>

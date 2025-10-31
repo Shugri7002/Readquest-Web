@@ -1,37 +1,21 @@
-@page
+@page "/Book/caraval"
+
 @{
-    ViewData["Title"] = "Caraval – Readquest";
+  ViewData["Title"] = "Caraval – Readquest";
+  var Book = new {
+    Title="Caraval",
+    Author="Stephanie Garber",
+    Cover="/img/books/caraval.jpg",
+    Pages="416",
+    AgeVibe="15+ • Whimsical, romantic, mysterious",
+    IfYouLike="mystery and illusions",
+    Stars="★★★★★",
+    Popularity="Popular",
+    Tags=new[]{ "magic","mystery","sisters" },
+    OneLiner="Scarlett enters a magical game to rescue her sister.",
+    AboutTitle="About Caraval",
+    AboutText="In the dazzling world of Caraval, nothing is quite real—even the stakes. Scarlett must solve the game before it’s too late."
+  };
 }
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/caraval.jpg" alt="Caraval"/>
-      <figcaption class="cover-meta">
-        <span class="pages">416 pages</span>
-        <div class="chips"><span class="chip">magic</span><span class="chip">mystery</span><span class="chip">sisters</span></div>
-      </figcaption>
-    </figure>
+=<partial name="_BookDetail" model="Book" />
 
-    <div class="book-info">
-      <h1 class="book-title">Caraval</h1>
-      <div class="byline">by <strong>Stephanie Garber</strong></div>
-      <ul class="meta-list">
-        <li>15+ • Whimsical, romantic, mysterious</li>
-        <li>If you like <b>mystery &amp; illusions</b></li>
-        <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Popular</span></li>
-        <li>magic • mystery • sisters</li>
-        <li class="one-liner">Scarlett enters a magical game to rescue her sister.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="book-section">
-    <h2>About Caraval</h2>
-    <p>Welcome to Caraval, where nothing is quite real—except the consequences. Time is running out, and the prize is everything.</p>
-  </div>
-          <a href="/Book/caraval" class="btn btn-gold">View Details</a>
-</div></section>

@@ -1,38 +1,20 @@
-@page
+@page "/Book/divergent"
+
 @{
-    ViewData["Title"] = "Divergent – Readquest";
+  ViewData["Title"] = "Divergent – Readquest";
+  var Book = new {
+    Title="Divergent",
+    Author="Veronica Roth",
+    Cover="/img/books/divergent.jpg",
+    Pages="496",
+    AgeVibe="15+ • Dystopia, courage, rebellion",
+    IfYouLike="The Hunger Games",
+    Stars="★★★★★",
+    Popularity="Classic",
+    Tags=new[]{ "dystopia","courage","rebellion" },
+    OneLiner="In a divided society, Tris discovers she’s Divergent—and becomes a target.",
+    AboutTitle="About Divergent",
+    AboutText="In post-war Chicago, society is split into factions. Tris Prior’s secret threatens the order as she uncovers a dangerous conspiracy."
+  };
 }
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/divergent.jpg" alt="Divergent"/>
-      <figcaption class="cover-meta">
-        <span class="pages">496 pages</span>
-        <div class="chips"><span class="chip">dystopia</span><span class="chip">courage</span><span class="chip">rebellion</span></div>
-      </figcaption>
-    </figure>
-
-    <div class="book-info">
-      <h1 class="book-title">Divergent</h1>
-      <div class="byline">by <strong>Veronica Roth</strong></div>
-      <ul class="meta-list">
-        <li>15+ • Rebellious, powerful, brave</li>
-        <li>If you like <b>The Hunger Games</b></li>
-        <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Classic</span></li>
-        <li>dystopia • courage • rebellion</li>
-        <li class="one-liner">Tris discovers she’s Divergent—and becomes a target.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="book-section">
-    <h2>About Divergent</h2>
-    <p>In a rigidly divided society, identity itself is dangerous—and choice can start a war.</p>
-  </div>
-          <a href="/Book/divergent" class="btn btn-gold">View Details</a>
-
-</div></section>
+<partial name="_BookDetail" model="Book" />

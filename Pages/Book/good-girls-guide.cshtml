@@ -1,35 +1,20 @@
-@page
+@page "/Book/a-good-girls-guide-to-murder"
+
 @{
-    ViewData["Title"] = "A Good Girl’s Guide to Murder – Readquest";
+  ViewData["Title"] = "A Good Girl’s Guide to Murder – Readquest";
+  var Book = new {
+    Title="A Good Girl’s Guide to Murder",
+    Author="Holly Jackson",
+    Cover="/img/books/good-girls-guide.jpg",
+    Pages="400",
+    AgeVibe="15+ • Clever, dark, realistic",
+    IfYouLike="crime podcasts",
+    Stars="★★★★★",
+    Popularity="Very popular",
+    Tags=new[]{ "true crime","mystery" },
+    OneLiner="Pippa reopens a closed murder case for her school project.",
+    AboutTitle="About A Good Girl’s Guide to Murder",
+    AboutText="What looks like a solved case starts to unravel as Pip uncovers dangerous truths."
+  };
 }
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/a-good-girls-guide-to-murder.jpg" alt="A Good Girl's Guide to Murder"/>
-      <figcaption class="cover-meta">
-        <span class="pages">448 pages</span>
-        <div class="chips"><span class="chip">true crime</span><span class="chip">mystery</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">A Good Girl’s Guide to Murder</h1>
-      <div class="byline">by <strong>Holly Jackson</strong></div>
-      <ul class="meta-list">
-        <li>15+ • Clever, dark, realistic</li>
-        <li>If you like <b>crime podcasts</b></li>
-        <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Very popular</span></li>
-        <li>true crime • mystery</li>
-        <li class="one-liner">Pippa reopens a closed murder case for her school project.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About A Good Girl’s Guide to Murder</h2>
-    <p>As Pip follows the evidence, the town’s perfect image starts to crack—and danger closes in.</p>
-  </div>
-          <a href="/Book/a-good-girls-guide-to-murder" class="btn btn-gold">View Details</a>
-</div></section>
+<partial name="_BookDetail" model="Book" />

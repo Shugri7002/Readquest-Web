@@ -1,36 +1,20 @@
-@page
-@{
-    ViewData["Title"] = "Scythe – Readquest";
-}
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/scythe.jpg" alt="Scythe"/>
-      <figcaption class="cover-meta">
-        <span class="pages">448 pages</span>
-        <div class="chips"><span class="chip">dystopia</span><span class="chip">death</span><span class="chip">morality</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">Scythe</h1>
-      <div class="byline">by <strong>Neal Shusterman</strong></div>
-      <ul class="meta-list">
-        <li>16+ • Philosophical, dark, thought-provoking</li>
-        <li>If you like <b>Black Mirror</b></li>
-        <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Acclaimed</span></li>
-        <li>dystopia • death • morality</li>
-        <li class="one-liner">In a world without death, two teens train to decide who dies.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About Scythe</h2>
-    <p>Citra and Rowan learn the terrible weight of mercy and the cost of corruption.</p>
-  </div>
-          <a href="/Book/scythe" class="btn btn-gold">View Details</a>
+@page "/Book/scythe"
 
-</div></section>
+@{
+  ViewData["Title"] = "Scythe – Readquest";
+  var Book = new {
+    Title="Scythe",
+    Author="Neal Shusterman",
+    Cover="/img/books/scythe.jpg",
+    Pages="464",
+    AgeVibe="16+ • Philosophical, dark, thought-provoking",
+    IfYouLike="Black Mirror",
+    Stars="★★★★★",
+    Popularity="Acclaimed",
+    Tags=new[]{ "dystopia","death","morality" },
+    OneLiner="In a world without death, two teens train to decide who dies.",
+    AboutTitle="About Scythe",
+    AboutText="As apprentices to Scythes, Citra and Rowan confront corruption in a system meant to be impartial."
+  };
+}
+<partial name="_BookDetail" model="Book" />

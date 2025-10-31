@@ -1,35 +1,20 @@
-@page
+@page "/Book/five-survive"
+
 @{
-    ViewData["Title"] = "Five Survive – Readquest";
+  ViewData["Title"] = "Five Survive – Readquest";
+  var Book = new {
+    Title="Five Survive",
+    Author="Holly Jackson",
+    Cover="/img/books/five-survive.jpg",
+    Pages="400",
+    AgeVibe="16+ • Tense, fast-paced, clever",
+    IfYouLike="escape-room tension",
+    Stars="★★★★☆",
+    Popularity="Popular",
+    Tags=new[]{ "thriller","survival","secrets" },
+    OneLiner="A road trip turns deadly when six friends are trapped by a sniper.",
+    AboutTitle="About Five Survive",
+    AboutText="The group must reveal their secrets to survive as a sniper demands answers."
+  };
 }
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/five-survive.jpg" alt="Five Survive"/>
-      <figcaption class="cover-meta">
-        <span class="pages">400 pages</span>
-        <div class="chips"><span class="chip">thriller</span><span class="chip">survival</span><span class="chip">secrets</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">Five Survive</h1>
-      <div class="byline">by <strong>Holly Jackson</strong></div>
-      <ul class="meta-list">
-        <li>16+ • Tense, fast-paced, clever</li>
-        <li>If you like <b>escape-room tension</b></li>
-        <li class="rating"><span class="stars">★★★★☆</span><span class="muted">&nbsp;Popular</span></li>
-        <li>thriller • survival • secrets</li>
-        <li class="one-liner">Six friends are trapped by a sniper during a road trip.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About Five Survive</h2>
-    <p>Every hour brings new demands—and a terrifying revelation about who the sniper really wants.</p>
-  </div>
-          <a href="/Book/five-survive" class="btn btn-gold">View Details</a>
-</div></section>
+<partial name="_BookDetail" model="Book" />

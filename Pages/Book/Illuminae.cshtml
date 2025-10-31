@@ -1,36 +1,20 @@
-@page
-@{
-    ViewData["Title"] = "Illuminae – Readquest";
-}
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/illuminae.jpg" alt="Illuminae"/>
-      <figcaption class="cover-meta">
-        <span class="pages">608 pages</span>
-        <div class="chips"><span class="chip">space</span><span class="chip">AI</span><span class="chip">survival</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">Illuminae</h1>
-      <div class="byline">by <strong>Amie Kaufman &amp; Jay Kristoff</strong></div>
-      <ul class="meta-list">
-        <li>15+ • Intense, techy, unique</li>
-        <li>If you like <b>space battles &amp; hacking</b></li>
-        <li class="rating"><span class="stars">★★★★☆</span><span class="muted">&nbsp;Popular</span></li>
-        <li>space • AI • survival</li>
-        <li class="one-liner">Two teens uncover secrets about an interstellar attack via data logs.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About Illuminae</h2>
-    <p>Found documents reveal a conspiracy of warships, corporations, and an AI losing its grip on sanity.</p>
-  </div>
-          <a href="/Book/illuminae" class="btn btn-gold">View Details</a>
+@page "/Book/illuminae"
 
-</div></section>
+@{
+  ViewData["Title"] = "Illuminae – Readquest";
+  var Book = new {
+    Title="Illuminae",
+    Author="Amie Kaufman & Jay Kristoff",
+    Cover="/img/books/illuminae.jpg",
+    Pages="608",
+    AgeVibe="15+ • Intense, techy, unique",
+    IfYouLike="space battles & hacking",
+    Stars="★★★★☆",
+    Popularity="Popular",
+    Tags=new[]{ "space","AI","survival" },
+    OneLiner="Two teens uncover secrets about an interstellar attack through data logs.",
+    AboutTitle="About Illuminae",
+    AboutText="Told via files and transcripts, the Illuminae dossier chronicles a fleet on the run from war, plague, and a rogue AI."
+  };
+}
+<partial name="_BookDetail" model="Book" />

@@ -1,0 +1,45 @@
+/* wwwroot/css/quests.css */
+.quests-hero{
+  min-height:100vh;
+  background:
+    linear-gradient(to bottom, rgba(10,11,13,.55), rgba(10,11,13,.92)),
+    url("/img/hero.jpg") center/cover no-repeat fixed;
+  color:#e7decf;
+  padding:96px 24px 120px;
+}
+.quests-inner{ width:min(1100px, 94%); margin:0 auto; }
+.quests-title{
+  font-family:'Playfair Display',serif;
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight:300; text-align:center; margin:0 0 6px;
+}
+.quests-sub{ text-align:center; color:#b9b3a3; margin-bottom:28px; }
+.quests-board{
+  border-radius:16px;
+  border:1px solid rgba(214,192,137,.22);
+  background: radial-gradient(120% 120% at 30% 0%,
+            rgba(28,29,33,.72) 0%,
+            rgba(20,21,25,.60) 40%,
+            rgba(18,19,22,.48) 100%);
+  box-shadow: 0 10px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.03);
+  padding: 24px;
+}
+.quest-row{
+  display:grid;
+  grid-template-columns: 1fr auto auto;
+  align-items:center;
+  gap:18px;
+  padding:18px 20px;
+  border:1px solid rgba(214,192,137,.18);
+  border-radius:12px;
+  margin: 16px 0;
+  background: rgba(0,0,0,.10);
+}
+.quest-text{ font-size:18px; }
+.quest-xp{ color:#d6c089; font-weight:700; }
+.btn{
+  display:inline-block; height:42px; padding:10px 16px;
+  border-radius:12px; font-weight:700; border:none; cursor:pointer;
+}
+.btn-gold{ background:#d6c089; color:#1b1c1f; }
+.btn-gold:hover{ filter:brightness(1.05); }

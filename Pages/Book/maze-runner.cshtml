@@ -1,38 +1,20 @@
-@page
+@page "/Book/maze-runner"
+
 @{
-    ViewData["Title"] = "The Maze Runner – Readquest";
+  ViewData["Title"] = "The Maze Runner – Readquest";
+  var Book = new {
+    Title="The Maze Runner",
+    Author="James Dashner",
+    Cover="/img/books/maze-runner.jpg",
+    Pages="384",
+    AgeVibe="15+ • Intense, thrilling, desperate",
+    IfYouLike="escape stories",
+    Stars="★★★★☆",
+    Popularity="Popular",
+    Tags=new[]{ "survival","dystopia","mystery" },
+    OneLiner="Thomas wakes in a deadly maze and must find a way out before time runs out.",
+    AboutTitle="About The Maze Runner",
+    AboutText="With memories erased, the Gladers must survive a shifting labyrinth and uncover why they were sent there."
+  };
 }
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/the-maze-runner.jpg" alt="The Maze Runner"/>
-      <figcaption class="cover-meta">
-        <span class="pages">384 pages</span>
-        <div class="chips"><span class="chip">survival</span><span class="chip">dystopia</span><span class="chip">mystery</span></div>
-      </figcaption>
-    </figure>
-
-    <div class="book-info">
-      <h1 class="book-title">The Maze Runner</h1>
-      <div class="byline">by <strong>James Dashner</strong></div>
-      <ul class="meta-list">
-        <li>15+ • Intense, thrilling, desperate</li>
-        <li>If you like <b>escape stories</b></li>
-        <li class="rating"><span class="stars">★★★★☆</span><span class="muted">&nbsp;Popular</span></li>
-        <li>survival • dystopia • mystery</li>
-        <li class="one-liner">Thomas wakes in a deadly maze and must find a way out.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="book-section">
-    <h2>About The Maze Runner</h2>
-    <p>With no memories and a shifting labyrinth, the Gladers’ only hope is to work together—or die trying.</p>
-  </div>
-          <a href="/Book/the-maze-runner" class="btn btn-gold">View Details</a>
-
-</div></section>
+<partial name="_BookDetail" model="Book" />

@@ -1,36 +1,20 @@
-@page
-@{
-    ViewData["Title"] = "Harrow Lake – Readquest";
-}
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/harrow-lake.jpg" alt="Harrow Lake"/>
-      <figcaption class="cover-meta">
-        <span class="pages">304 pages</span>
-        <div class="chips"><span class="chip">mystery</span><span class="chip">horror</span><span class="chip">trauma</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">Harrow Lake</h1>
-      <div class="byline">by <strong>Kat Ellis</strong></div>
-      <ul class="meta-list">
-        <li>15+ • Disturbing, psychological, tense</li>
-        <li>If you like <b>psychological horror</b></li>
-        <li class="rating"><span class="stars">★★★☆☆</span><span class="muted">&nbsp;Underrated</span></li>
-        <li>mystery • horror • trauma</li>
-        <li class="one-liner">A town with a creepy past won’t let its secrets stay buried.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About Harrow Lake</h2>
-    <p>Lola Knox returns to her father’s infamous filming location, where legends whisper—and dangers stalk.</p>
-  </div>
-          <a href="/Book/harrow-lake" class="btn btn-gold">View Details</a>
+@page "/Book/harrow-lake"
 
-</div></section>
+@{
+  ViewData["Title"] = "Harrow Lake – Readquest";
+  var Book = new {
+    Title="Harrow Lake",
+    Author="Kat Ellis",
+    Cover="/img/books/harrow-lake.jpg",
+    Pages="304",
+    AgeVibe="15+ • Disturbing, psychological, tense",
+    IfYouLike="psychological horror",
+    Stars="★★★☆☆",
+    Popularity="Underrated",
+    Tags=new[]{ "mystery","horror","trauma" },
+    OneLiner="A girl uncovers horror in her father’s creepy hometown.",
+    AboutTitle="About Harrow Lake",
+    AboutText="When Lola moves to her famous father’s past, urban legends and family secrets blur into reality."
+  };
+}
+<partial name="_BookDetail" model="Book" />

@@ -1,34 +1,20 @@
-@page
+@page "/Book/they-both-die-at-the-end"
+
 @{
-    ViewData["Title"] = "They Both Die at the End – Readquest";
+  ViewData["Title"] = "They Both Die at the End – Readquest";
+  var Book = new {
+    Title = "They Both Die at the End",
+    Author = "Adam Silvera",
+    Cover = "/img/books/they-both-die-at-the-end.jpg",
+    Pages = "384",
+    AgeVibe = "16+ • Emotional, reflective, tragic",
+    IfYouLike = "sad but meaningful stories",
+    Stars = "★★★★★",
+    Popularity = "Very popular",
+    Tags = new[] { "love", "death", "destiny" },
+    OneLiner = "Two boys meet on the day they’re destined to die.",
+    AboutTitle = "About They Both Die at the End",
+    AboutText = "When Death-Cast calls Mateo and Rufus to say they’ll die today, the two strangers connect through an app to live a lifetime in one day—choosing honesty, courage, and love before time runs out."
+  };
 }
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/they-both-die-at-the-end.jpg" alt="They Both Die at the End"/>
-      <figcaption class="cover-meta">
-        <span class="pages">384 pages</span>
-        <div class="chips"><span class="chip">love</span><span class="chip">death</span><span class="chip">destiny</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">They Both Die at the End</h1>
-      <div class="byline">by <strong>Adam Silvera</strong></div>
-      <ul class="meta-list">
-        <li>16+ • Emotional, reflective, tragic</li>
-        <li>If you like <b>sad but meaningful stories</b></li>
-        <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Very popular</span></li>
-        <li>love • death • destiny</li>
-        <li class="one-liner">Two boys meet on the day they’re destined to die.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About They Both Die at the End</h2>
-    <p>On their Last Day, Mateo and Rufus choose connection, courage, and love.</p>
-  </div>
-</div></section>
+<partial name="_BookDetail" model="Book" />

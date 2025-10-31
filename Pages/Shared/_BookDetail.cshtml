@@ -1,0 +1,68 @@
+@model dynamic
+<section class="book-hero">
+  <div class="book-inner">
+    <div class="book-frame">
+
+      <figure class="cover-wrap">
+        <img class="book-cover" src="@Model.Cover" alt="@Model.Title" />
+        <figcaption class="cover-meta">
+          @if (!string.IsNullOrWhiteSpace((string)Model.Pages))
+          {
+            <span class="pages">@Model.Pages pages</span>
+          }
+          @if (Model.Tags != null)
+          {
+            <div class="chips">
+              @foreach (var t in Model.Tags)
+              {
+                <span class="chip">@t</span>
+              }
+            </div>
+          }
+        </figcaption>
+      </figure>
+
+      <div class="book-info">
+        <h1 class="book-title">@Model.Title</h1>
+        <div class="byline">by <strong>@Model.Author</strong></div>
+
+        <ul class="meta-list">
+          @if (!string.IsNullOrWhiteSpace((string)Model.AgeVibe))
+          {
+            <li>@Model.AgeVibe</li>
+          }
+
+          @if (!string.IsNullOrWhiteSpace((string)Model.IfYouLike))
+          {
+            <li>If you like <b>@Model.IfYouLike</b></li>
+          }
+
+          <li class="rating">
+            <span class="stars">@Model.Stars</span>
+            <span class="muted">&nbsp;@Model.Popularity</span>
+          </li>
+
+          @if (Model.Tags != null)
+          {
+            <li>@string.Join(" • ", (IEnumerable<string>)Model.Tags)</li>
+          }
+
+          @if (!string.IsNullOrWhiteSpace((string)Model.OneLiner))
+          {
+            <li class="one-liner">@Model.OneLiner</li>
+          }
+        </ul>
+
+        <div class="cta-row">
+          <button class="btn btn-gold">Start Reading</button>
+          <button class="btn btn-outline">Mark as Finished</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-section">
+      <h2>@Model.AboutTitle</h2>
+      <p>@Model.AboutText</p>
+    </div>
+  </div>
+</section>

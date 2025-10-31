@@ -1,36 +1,20 @@
-@page
-@{
-    ViewData["Title"] = "Today Tonight Tomorrow – Readquest";
-}
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/today-tonight-tomorrow.jpg" alt="Today Tonight Tomorrow"/>
-      <figcaption class="cover-meta">
-        <span class="pages">384 pages</span>
-        <div class="chips"><span class="chip">rivals-to-lovers</span><span class="chip">school</span><span class="chip">humor</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">Today Tonight Tomorrow</h1>
-      <div class="byline">by <strong>Rachel Lynn Solomon</strong></div>
-      <ul class="meta-list">
-        <li>16+ • Funny, romantic, clever</li>
-        <li>If you like <b>academic rivals</b></li>
-        <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Trendy</span></li>
-        <li>rivals-to-lovers • school • humor</li>
-        <li class="one-liner">Two academic rivals team up for one wild night before graduation.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About Today Tonight Tomorrow</h2>
-    <p>Rowan and Neil race through Seattle’s senior scavenger hunt—and crash into the truth about each other.</p>
-  </div>
-          <a href="/Book/today-tonight-tomorrow" class="btn btn-gold">View Details</a>
+@page "/Book/today-tonight-tomorrow"
 
-</div></section>
+@{
+  ViewData["Title"] = "Today Tonight Tomorrow – Readquest";
+  var Book = new {
+    Title="Today Tonight Tomorrow",
+    Author="Rachel Lynn Solomon",
+    Cover="/img/books/today-tonight-tomorrow.jpg",
+    Pages="432",
+    AgeVibe="16+ • Funny, romantic, clever",
+    IfYouLike="academic rivals",
+    Stars="★★★★★",
+    Popularity="Trendy",
+    Tags=new[]{ "rivals-to-lovers","school","humor" },
+    OneLiner="Two academic rivals team up for one wild night before graduation.",
+    AboutTitle="About Today Tonight Tomorrow",
+    AboutText="Rowan and Neil’s rivalry twists into romance during a citywide senior scavenger hunt."
+  };
+}
+<partial name="_BookDetail" model="Book" />

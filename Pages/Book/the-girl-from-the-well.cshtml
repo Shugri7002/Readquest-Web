@@ -1,36 +1,20 @@
-@page
-@{
-    ViewData["Title"] = "The Girl from the Well – Readquest";
-}
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/the-girl-from-the-well.jpg" alt="The Girl from the Well"/>
-      <figcaption class="cover-meta">
-        <span class="pages">267 pages</span>
-        <div class="chips"><span class="chip">ghosts</span><span class="chip">revenge</span><span class="chip">japanese myth</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">The Girl from the Well</h1>
-      <div class="byline">by <strong>Rin Chupeco</strong></div>
-      <ul class="meta-list">
-        <li>16+ • Chilling, poetic, dark</li>
-        <li>If you like <b>The Ring</b></li>
-        <li class="rating"><span class="stars">★★★☆☆</span><span class="muted">&nbsp;Underrated</span></li>
-        <li>ghosts • revenge • Japanese myth</li>
-        <li class="one-liner">A vengeful ghost hunts murderers—while guarding the innocent.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About The Girl from the Well</h2>
-    <p>Okiku’s curse becomes a shield when she meets a boy marked by a darker spirit—and a history that won’t stay buried.</p>
-  </div>
-          <a href="/Book/the-girl-from-the-well" class="btn btn-gold">View Details</a>
+@page "/Book/girl-from-the-well"
 
-</div></section>
+@{
+  ViewData["Title"] = "The Girl from the Well – Readquest";
+  var Book = new {
+    Title="The Girl from the Well",
+    Author="Rin Chupeco",
+    Cover="/img/books/girl-from-the-well.jpg",
+    Pages="272",
+    AgeVibe="16+ • Chilling, poetic, dark",
+    IfYouLike="The Ring",
+    Stars="★★★☆☆",
+    Popularity="Underrated",
+    Tags=new[]{ "ghosts","revenge","japanese myth" },
+    OneLiner="A vengeful ghost hunts murderers and protects the innocent.",
+    AboutTitle="About The Girl from the Well",
+    AboutText="Okiku seeks justice for the murdered, and a boy with a curse becomes her unlikely focus."
+  };
+}
+<partial name="_BookDetail" model="Book" />

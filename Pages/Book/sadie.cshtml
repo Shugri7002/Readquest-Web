@@ -1,36 +1,21 @@
-@page
-@{
-    ViewData["Title"] = "Sadie – Readquest";
-}
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/sadie.jpg" alt="Sadie"/>
-      <figcaption class="cover-meta">
-        <span class="pages">320 pages</span>
-        <div class="chips"><span class="chip">podcast</span><span class="chip">crime</span><span class="chip">revenge</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">Sadie</h1>
-      <div class="byline">by <strong>Courtney Summers</strong></div>
-      <ul class="meta-list">
-        <li>16+ • Gritty, emotional, realistic</li>
-        <li>If you like <b>true crime thrillers</b></li>
-        <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Critically acclaimed</span></li>
-        <li>podcast • crime • revenge</li>
-        <li class="one-liner">A girl hunts her sister’s killer while the world listens.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About Sadie</h2>
-    <p>Through a podcast and a personal journey, the truth emerges—piece by devastating piece.</p>
-  </div>
-          <a href="/Book/sadie" class="btn btn-gold">View Details</a>
+@page "/Book/sadie"
 
-</div></section>
+@{
+  ViewData["Title"] = "Sadie – Readquest";
+  var Book = new {
+    Title="Sadie",
+    Author="Courtney Summers",
+    Cover="/img/books/sadie.jpg",
+    Pages="320",
+    AgeVibe="16+ • Gritty, emotional, realistic",
+    IfYouLike="true crime thrillers",
+    Stars="★★★★★",
+    Popularity="Critically acclaimed",
+    Tags=new[]{ "podcast","crime","revenge" },
+    OneLiner="A girl hunts her sister’s killer as the world listens.",
+    AboutTitle="About Sadie",
+    AboutText="Told via podcast transcripts and Sadie’s POV, the story traces a relentless quest for justice."
+  };
+}
+<partial name="_BookDetail" model="Book" />
+

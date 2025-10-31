@@ -1,0 +1,86 @@
+@page "/Profile"
+@{
+    ViewData["Title"] = "Profile – Readquest";
+}
+
+<section class="profile-hero">
+  <h1 class="title">Your Reading Journey</h1>
+  <p class="subtitle">Welcome back, adventurer of stories.</p>
+
+  <div class="profile-grid">
+    <!-- LEFT: sidebar -->
+    <aside class="sidebar panel">
+      <div class="avatar"><img src="/img/pfp.png" alt=""></div>
+      <h3 class="name">Seraphine the Seeker</h3>
+
+      <div class="stats">
+        <div>Books Completed: <strong>12 / 25</strong></div>
+        <div>Genres Explored: <strong>6 / 6</strong></div>
+        <div>XP: <strong>4250</strong></div>
+        <div>Current Rank: <span class="rank">Adventurer</span></div>
+      </div>
+
+      <button class="btn">Book Champion</button>
+    </aside>
+
+    <!-- RIGHT: main panel -->
+    <section class="main panel">
+      <div class="main-inner">
+        <!-- Current Reads -->
+        <section class="reading">
+          <h2 class="block-title">Current Reads</h2>
+
+          <div class="current-grid">
+            <article class="book-card">
+              <img class="cover" src="/img/books/a-game-of-thrones.jpg" alt="">
+              <h4 class="title">A Game of Thrones</h4>
+              <div class="meta">480/720 pages</div>
+              <button class="btn">Continue Reading</button>
+            </article>
+
+            <article class="book-card">
+              <img class="cover" src="/img/books/six-of-crows.jpg" alt="">
+              <h4 class="title">Six of Crows</h4>
+              <div class="meta">380/720 pages</div>
+              <button class="btn">Continue Reading</button>
+            </article>
+
+            <article class="book-card">
+              <img class="cover" src="/img/books/legendborn.jpg" alt="">
+              <h4 class="title">Legendborn</h4>
+              <div class="meta">410/720 pages</div>
+              <button class="btn">Continue Reading</button>
+            </article>
+          </div>
+
+          <h3 class="block-title small">Recent Reads</h3>
+          <div class="recent-grid">
+            <img class="mini" src="/img/books/one-of-us-is-lying.jpg" alt="">
+            <img class="mini" src="/img/books/renegades.jpg" alt="">
+            <img class="mini" src="/img/books/scythe.jpg" alt="">
+            <img class="mini" src="/img/books/hunger-games.jpg" alt="">
+            <img class="mini" src="/img/books/caraval.jpg" alt="">
+          </div>
+        </section>
+
+        <!-- Achievements + Quote -->
+        <aside class="achievements">
+          <h2 class="block-title">Achievements</h2>
+          <div class="badges">
+            <div class="badge"><svg viewBox="0 0 24 24"><path d="M5 3h14v14H5zM7 19h10v2H7z"/></svg></div>
+            <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 2l7 12H5z"/></svg></div>
+            <div class="badge"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 100 14 7 7 0 000-14z"/></svg></div>
+            <div class="badge"><svg viewBox="0 0 24 24"><path d="M4 12h16v8H4zM6 6h12v4H6z"/></svg></div>
+          </div>
+          <div class="sep"></div>
+          <blockquote class="quote-card">
+            “Every page turned<br>
+            is another step in<br>
+            your adventure.”
+          </blockquote>
+        </aside>
+      </div>
+    </section>
+  </div>
+</section>
+

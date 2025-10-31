@@ -1,36 +1,20 @@
-@page
-@{
-    ViewData["Title"] = "Call It What You Want – Readquest";
-}
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/call-it-what-you-want.jpg" alt="Call It What You Want"/>
-      <figcaption class="cover-meta">
-        <span class="pages">384 pages</span>
-        <div class="chips"><span class="chip">forgiveness</span><span class="chip">family</span><span class="chip">love</span></div>
-      </figcaption>
-    </figure>
-    <div class="book-info">
-      <h1 class="book-title">Call It What You Want</h1>
-      <div class="byline">by <strong>Brigid Kemmerer</strong></div>
-      <ul class="meta-list">
-        <li>16+ • Emotional, realistic, hopeful</li>
-        <li>If you like <b>character-driven stories</b></li>
-        <li class="rating"><span class="stars">★★★★☆</span><span class="muted">&nbsp;Popular</span></li>
-        <li>forgiveness • family • love</li>
-        <li class="one-liner">Two teens with complicated pasts find strength in each other.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-  <div class="book-section">
-    <h2>About Call It What You Want</h2>
-    <p>Rob and Maegan confront guilt, expectations, and the meaning of doing the right thing.</p>
-  </div>
-          <a href="/Book/call-it-what-you-want" class="btn btn-gold">View Details</a>
+@page "/Book/call-it-what-you-want"
 
-</div></section>
+@{
+  ViewData["Title"] = "Call It What You Want – Readquest";
+  var Book = new {
+    Title="Call It What You Want",
+    Author="Brigid Kemmerer",
+    Cover="/img/books/call-it-what-you-want.jpg",
+    Pages="384",
+    AgeVibe="16+ • Emotional, realistic, hopeful",
+    IfYouLike="emotional, character-driven stories",
+    Stars="★★★★☆",
+    Popularity="Popular",
+    Tags=new[]{ "forgiveness","family","love" },
+    OneLiner="Two teens with difficult pasts find strength in each other.",
+    AboutTitle="About Call It What You Want",
+    AboutText="Maegan and Rob are forced to partner on a project—and slowly begin to heal."
+  };
+}
+<partial name="_BookDetail" model="Book" />

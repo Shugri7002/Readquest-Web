@@ -1,38 +1,20 @@
-@page
+@page "/Book/throne-of-glass"
+
 @{
-    ViewData["Title"] = "Throne of Glass – Readquest";
+  ViewData["Title"] = "Throne of Glass – Readquest";
+  var Book = new {
+    Title="Throne of Glass",
+    Author="Sarah J. Maas",
+    Cover="/img/books/throne-of-glass.jpg",
+    Pages="432",
+    AgeVibe="16+ • Fierce, romantic, powerful",
+    IfYouLike="strong heroines",
+    Stars="★★★★★",
+    Popularity="Trendy",
+    Tags=new[]{ "assassins","magic","romance" },
+    OneLiner="A deadly assassin must win a royal competition to earn her freedom.",
+    AboutTitle="About Throne of Glass",
+    AboutText="Celaena Sardothien fights for freedom among court intrigue, dark magic, and dangerous rivals."
+  };
 }
-<section class="book-hero"><div class="book-inner">
-  <div class="book-frame">
-    <figure class="cover-wrap">
-      <img class="book-cover" src="/img/books/throne-of-glass.jpg" alt="Throne of Glass"/>
-      <figcaption class="cover-meta">
-        <span class="pages">432 pages</span>
-        <div class="chips"><span class="chip">assassins</span><span class="chip">magic</span><span class="chip">romance</span></div>
-      </figcaption>
-    </figure>
-
-    <div class="book-info">
-      <h1 class="book-title">Throne of Glass</h1>
-      <div class="byline">by <strong>Sarah J. Maas</strong></div>
-      <ul class="meta-list">
-        <li>16+ • Fierce, romantic, powerful</li>
-        <li>If you like <b>strong heroines</b></li>
-        <li class="rating"><span class="stars">★★★★★</span><span class="muted">&nbsp;Trendy</span></li>
-        <li>assassins • magic • romance</li>
-        <li class="one-liner">A deadly assassin must win a royal competition to earn her freedom.</li>
-      </ul>
-      <div class="cta-row">
-        <button class="btn btn-gold">Start Reading</button>
-        <button class="btn btn-hollow">Mark as Finished</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="book-section">
-    <h2>About Throne of Glass</h2>
-    <p>Imprisoned assassin Celaena Sardothien is offered freedom—if she defeats killers and soldiers to become the king’s champion.</p>
-  </div>
-          <a href="/Book/throne-of-glass" class="btn btn-gold">View Details</a>
-
-</div></section>
+<partial name="_BookDetail" model="Book" />

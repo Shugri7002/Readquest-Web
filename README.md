@@ -43,16 +43,13 @@ Some features like login and badges are planned but not finished yet.
 * Database connection for user data
 
 ## Screenshots
-![Dashboard Page](screenshots/screenshots-dashboard.png)
-![Homepage](screenshots/screenshots-homepage.png)
-![Map Page](screenshots/screenshots-map.png)
-![Profile Page](screenshots/screenshots-profile.png)
+![Homepage](screenshots-homepage.png)
+![Map Page](screenshots-map.png)
+![Dashboard Page](screenshots-dashboard.png)
+![Profile Page](screenshots-profile.png)
 
 ## Author
 
 Shugri Farah
 Class Oranje 2025
 "Reading doesn’t have to be boring, it can be an adventure."
-
-```
-``` 

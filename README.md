@@ -1,4 +1,3 @@
-````markdown
 # READQUEST
 
 ## Description
@@ -54,5 +53,3 @@ Shugri Farah
 Class Oranje 2025
 "Reading doesn’t have to be boring, it can be an adventure."
 
-```
-```
